@@ -1,61 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>JS中字符串和数组的基本操作</title>
-    <url>/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2018/JS%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p><strong>变量：</strong> 计算机开辟的一块内存空间。<br><code>栈</code>：计算机为基础类型（string、number、boolean）开辟的一块内存空间。<br><code>堆</code>：计算机为基础类型（object、array）开辟的一块内存空间。<br>JavaScript字符串是引号中的零个或多个字符。<br>数组是一种特殊的变量，它能够一次存放一个以上的值。</p>
-<p><img src="//tiven.cn/assets/img/img-js.jpg" alt="JavaScript"></p>
-<span id="more"></span>
-<ul>
-<li>1、length——长度</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var str=&#x27;zmnaer&#x27;;</span><br><span class="line">console.log(str.length);// 6</span><br><span class="line">/*引号中间的空格也算长度*/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>2、charAt()——字符串索引对应的值</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var str=&#x27;zmnaer&#x27;;</span><br><span class="line">console.log(str.charAt());// z</span><br><span class="line">console.log(str.charAt(0));// z</span><br><span class="line">console.log(str.charAt(11));// (空)</span><br><span class="line">console.log(str.charAt(-1));// (空)</span><br><span class="line">/*不写值，默认为0，大于字符串最大长度和取负数都返回值为空*/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>3、charCodeAt()——Unicode编码值</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alert(&#x27;周&#x27;.charCodeAt());// 21608</span><br></pre></td></tr></table></figure>
-<ul>
-<li>4、fromCharCode()——反译Unicode码</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">console.log(String.fromCharCode(21608,22937));// 周妙</span><br></pre></td></tr></table></figure>
-<ul>
-<li>5、substring——字符串截取</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var str=&#x27;这是一个字符串&#x27;;</span><br><span class="line">console.log(str.substring(2));// 一个字符串</span><br><span class="line">console.log(str.substring(0,2));// 这是</span><br><span class="line">console.log(str.substring(2,0));// 这是</span><br><span class="line">console.log(str.substring());// 这是一个字符串</span><br><span class="line">console.log(str.substring(0));// 这是一个字符串</span><br><span class="line">console.log(str.substring(-3,2));// 这是</span><br><span class="line">console.log(str.substring(2,-3));// 这是</span><br><span class="line">/*</span><br><span class="line">*不写参数默认为0，取所有</span><br><span class="line">*两个参数，会自动排序，值小的在前，大的在后</span><br><span class="line">*负数为自动转化为0</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>6、slice——字符串截取</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var str=&#x27;这是一个字符串&#x27;;</span><br><span class="line">console.log(str.slice(4));// 字符串</span><br><span class="line">console.log(str.slice(-2));// 符串</span><br><span class="line">console.log(str.slice(0,2));// 这是</span><br><span class="line">console.log(str.slice(2,0));// （空）</span><br><span class="line">console.log(str.slice(-2,-4));// 个字</span><br></pre></td></tr></table></figure>
-<ul>
-<li>7、toUpperCase()——转换成大写</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">console.log(&#x27;zmnaer&#x27;.toUpperCase());// ZMNAER</span><br></pre></td></tr></table></figure>
-<ul>
-<li>8、toLowerCse()——转换成小写</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">console.log(&#x27;ZMnaer&#x27;.toLowerCse());// zmnaer</span><br></pre></td></tr></table></figure>
-<ul>
-<li>9、split——字符串切割</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var str=&#x27;www.zmnaer.com&#x27;;</span><br><span class="line">console.log(str.split(&#x27;.&#x27;);// [&#x27;www&#x27;,&#x27;zmnaer&#x27;,&#x27;com&#x27;]</span><br><span class="line">console.log(&#x27;zmnaer&#x27;.split());// [&#x27;zmnaer&#x27;]</span><br><span class="line">console.log(&#x27;zmnaer&#x27;.split(&#x27;&#x27;));// [&#x27;z&#x27;,&#x27;m&#x27;,&#x27;n&#x27;,&#x27;a&#x27;,&#x27;e&#x27;,&#x27;r&#x27;]</span><br><span class="line">console.log(&#x27;zmnaer&#x27;.split(&#x27;m&#x27;));// [&#x27;z&#x27;,&#x27;naer&#x27;]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>10、splice——删除、替换、添加（数组）</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var arr = [&#x27;aa&#x27;,&#x27;bb&#x27;,11,22];</span><br><span class="line">1、删除</span><br><span class="line">arr.splice(0,1);console.log(arr);// [&#x27;bb&#x27;,11,22]</span><br><span class="line">arr.splice(0,2);console.log(arr);// [11,22]</span><br><span class="line">2、替换</span><br><span class="line">arr.splice(0,1,&#x27;aaa&#x27;);console.log(arr);// [&#x27;aaa&#x27;,&#x27;bb&#x27;,11,22]</span><br><span class="line">arr.splice(0,2,&#x27;aaa&#x27;);console.log(arr);// [&#x27;aaa&#x27;,11,22]</span><br><span class="line">3、添加</span><br><span class="line">arr.splice(0,0,&#x27;edg&#x27;);console.log(arr);// [&#x27;edg&#x27;,&#x27;aa&#x27;,&#x27;bb&#x27;,11,22]</span><br><span class="line">arr.splice(1,0,&#x27;aabb&#x27;);console.log(arr);// [&#x27;aa&#x27;,&#x27;aabb&#x27;,11,22]</span><br><span class="line">/* 添加多个 */</span><br><span class="line">arr.splice(1,0,&#x27;aabb&#x27;,&#x27;abc&#x27;);console.log(arr);// [&#x27;aa&#x27;,&#x27;aabb&#x27;,&#x27;abc&#x27;,11,22]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>11、reverse——颠倒(数组)</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/* 数组 */</span><br><span class="line">var arr = [1,2,3]</span><br><span class="line">arr.reverse();</span><br><span class="line">console.log(arr);// [3,2,1]</span><br><span class="line">/* 字符串 */</span><br><span class="line">var str = &#x27;abcdef&#x27;;</span><br><span class="line">console.log(str.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;));// &#x27;fedcba&#x27;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>babel入门一篇搞定</title>
     <url>/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2017/babel%E5%85%A5%E9%97%A8%E4%B8%80%E7%AF%87%E6%90%9E%E5%AE%9A/</url>
     <content><![CDATA[<p>前端技术在日新月异的变化着，<code>JavaScript</code>以其独特的优势，在编程上广泛被关注，被使用。所以JavaScript的贡献者、拥抱者，希望js可以像Java、PHP等编程语言一样具有更强大、更完善的编程能力，以便进行更复杂的<code>面向对象</code>编程。</p>
@@ -123,9 +68,9 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>js</tag>
         <tag>babel</tag>
         <tag>ES6</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -271,6 +216,61 @@
 </blockquote>
 </li>
 </ul>
+]]></content>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS中字符串和数组的基本操作</title>
+    <url>/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2018/JS%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p><strong>变量：</strong> 计算机开辟的一块内存空间。<br><code>栈</code>：计算机为基础类型（string、number、boolean）开辟的一块内存空间。<br><code>堆</code>：计算机为基础类型（object、array）开辟的一块内存空间。<br>JavaScript字符串是引号中的零个或多个字符。<br>数组是一种特殊的变量，它能够一次存放一个以上的值。</p>
+<p><img src="//tiven.cn/assets/img/img-js.jpg" alt="JavaScript"></p>
+<span id="more"></span>
+<ul>
+<li>1、length——长度</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var str=&#x27;zmnaer&#x27;;</span><br><span class="line">console.log(str.length);// 6</span><br><span class="line">/*引号中间的空格也算长度*/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2、charAt()——字符串索引对应的值</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var str=&#x27;zmnaer&#x27;;</span><br><span class="line">console.log(str.charAt());// z</span><br><span class="line">console.log(str.charAt(0));// z</span><br><span class="line">console.log(str.charAt(11));// (空)</span><br><span class="line">console.log(str.charAt(-1));// (空)</span><br><span class="line">/*不写值，默认为0，大于字符串最大长度和取负数都返回值为空*/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3、charCodeAt()——Unicode编码值</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alert(&#x27;周&#x27;.charCodeAt());// 21608</span><br></pre></td></tr></table></figure>
+<ul>
+<li>4、fromCharCode()——反译Unicode码</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">console.log(String.fromCharCode(21608,22937));// 周妙</span><br></pre></td></tr></table></figure>
+<ul>
+<li>5、substring——字符串截取</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var str=&#x27;这是一个字符串&#x27;;</span><br><span class="line">console.log(str.substring(2));// 一个字符串</span><br><span class="line">console.log(str.substring(0,2));// 这是</span><br><span class="line">console.log(str.substring(2,0));// 这是</span><br><span class="line">console.log(str.substring());// 这是一个字符串</span><br><span class="line">console.log(str.substring(0));// 这是一个字符串</span><br><span class="line">console.log(str.substring(-3,2));// 这是</span><br><span class="line">console.log(str.substring(2,-3));// 这是</span><br><span class="line">/*</span><br><span class="line">*不写参数默认为0，取所有</span><br><span class="line">*两个参数，会自动排序，值小的在前，大的在后</span><br><span class="line">*负数为自动转化为0</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>6、slice——字符串截取</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var str=&#x27;这是一个字符串&#x27;;</span><br><span class="line">console.log(str.slice(4));// 字符串</span><br><span class="line">console.log(str.slice(-2));// 符串</span><br><span class="line">console.log(str.slice(0,2));// 这是</span><br><span class="line">console.log(str.slice(2,0));// （空）</span><br><span class="line">console.log(str.slice(-2,-4));// 个字</span><br></pre></td></tr></table></figure>
+<ul>
+<li>7、toUpperCase()——转换成大写</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">console.log(&#x27;zmnaer&#x27;.toUpperCase());// ZMNAER</span><br></pre></td></tr></table></figure>
+<ul>
+<li>8、toLowerCse()——转换成小写</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">console.log(&#x27;ZMnaer&#x27;.toLowerCse());// zmnaer</span><br></pre></td></tr></table></figure>
+<ul>
+<li>9、split——字符串切割</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var str=&#x27;www.zmnaer.com&#x27;;</span><br><span class="line">console.log(str.split(&#x27;.&#x27;);// [&#x27;www&#x27;,&#x27;zmnaer&#x27;,&#x27;com&#x27;]</span><br><span class="line">console.log(&#x27;zmnaer&#x27;.split());// [&#x27;zmnaer&#x27;]</span><br><span class="line">console.log(&#x27;zmnaer&#x27;.split(&#x27;&#x27;));// [&#x27;z&#x27;,&#x27;m&#x27;,&#x27;n&#x27;,&#x27;a&#x27;,&#x27;e&#x27;,&#x27;r&#x27;]</span><br><span class="line">console.log(&#x27;zmnaer&#x27;.split(&#x27;m&#x27;));// [&#x27;z&#x27;,&#x27;naer&#x27;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>10、splice——删除、替换、添加（数组）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var arr = [&#x27;aa&#x27;,&#x27;bb&#x27;,11,22];</span><br><span class="line">1、删除</span><br><span class="line">arr.splice(0,1);console.log(arr);// [&#x27;bb&#x27;,11,22]</span><br><span class="line">arr.splice(0,2);console.log(arr);// [11,22]</span><br><span class="line">2、替换</span><br><span class="line">arr.splice(0,1,&#x27;aaa&#x27;);console.log(arr);// [&#x27;aaa&#x27;,&#x27;bb&#x27;,11,22]</span><br><span class="line">arr.splice(0,2,&#x27;aaa&#x27;);console.log(arr);// [&#x27;aaa&#x27;,11,22]</span><br><span class="line">3、添加</span><br><span class="line">arr.splice(0,0,&#x27;edg&#x27;);console.log(arr);// [&#x27;edg&#x27;,&#x27;aa&#x27;,&#x27;bb&#x27;,11,22]</span><br><span class="line">arr.splice(1,0,&#x27;aabb&#x27;);console.log(arr);// [&#x27;aa&#x27;,&#x27;aabb&#x27;,11,22]</span><br><span class="line">/* 添加多个 */</span><br><span class="line">arr.splice(1,0,&#x27;aabb&#x27;,&#x27;abc&#x27;);console.log(arr);// [&#x27;aa&#x27;,&#x27;aabb&#x27;,&#x27;abc&#x27;,11,22]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>11、reverse——颠倒(数组)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/* 数组 */</span><br><span class="line">var arr = [1,2,3]</span><br><span class="line">arr.reverse();</span><br><span class="line">console.log(arr);// [3,2,1]</span><br><span class="line">/* 字符串 */</span><br><span class="line">var str = &#x27;abcdef&#x27;;</span><br><span class="line">console.log(str.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;));// &#x27;fedcba&#x27;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>js</tag>
