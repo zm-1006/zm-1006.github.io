@@ -689,7 +689,6 @@ a.article-title:hover {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.4em;
   margin: 1.6em 20px;
-  text-align: center;
 }
 .article-entry blockquote footer {
   font-size: 14px;
@@ -1141,6 +1140,7 @@ a.article-title:hover {
 }
 #page-nav a,
 #page-nav span {
+  cursor: pointer;
   padding: 10px 20px;
   line-height: 1;
   height: 2ex;
@@ -1150,7 +1150,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #999;
+  background: #1890ff;
   color: #fff;
 }
 #page-nav .prev {
@@ -1168,7 +1168,7 @@ a.article-title:hover {
   }
 }
 #page-nav .current {
-  color: #555;
+  color: #1890ff;
   font-weight: bold;
 }
 #page-nav .space {
@@ -1426,12 +1426,16 @@ pre .javascript .function {
 .widget {
   color: #777;
   text-shadow: 0 1px #fff;
-  background: #ddd;
-  -webkit-box-shadow: 0 -1px 4px #ccc inset;
-  box-shadow: 0 -1px 4px #ccc inset;
-  border: 1px solid #ccc;
+  background: #fff7f7;
+  -webkit-box-shadow: 0 -1px 10px #ddd inset;
+  box-shadow: 0 -1px 10px #ddd inset;
+  border: 1px solid #ddd;
   padding: 15px;
   border-radius: 3px;
+}
+.widget:hover {
+  -webkit-box-shadow: 0 0 20px #ddd inset;
+  box-shadow: 0 0 20px #ddd inset;
 }
 .widget a {
   color: #00b1fb;
