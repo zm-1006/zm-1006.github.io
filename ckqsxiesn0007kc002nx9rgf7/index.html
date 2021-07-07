@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <!--百度抓取验证-->
     <meta name="baidu-site-verification" content="code-rYJ9CRyrPR">
-    <!--定义网页的描述说明信息-->
-    <meta name="description" content="tiven.cn是一个基于hexo强力驱动，采用github云仓库，自定义域名自主搭建的个人博客，致力于与广大程序猿共同探讨代码的奥秘，分享编程的乐趣。">
     <!--定义网页的关键字，供搜索引擎搜索-->
-    <meta name="keywords" content="tiven.cn 松枫 hexo blog 博客 web 前端 HTML CSS H5 javascript JS nodejs node github coding">
+    <meta name="keywords" content="tiven.cn zmnaer zmer 松枫 hexo blog 博客 web 前端 HTML CSS H5 javascript JS nodejs node github coding">
     <!--设置网页作者-->
     <meta name="author" content="tiven">
     <!--设置网页版权-->
@@ -17,24 +15,22 @@
     
     <title>
         
-          windows常用shell命令之文件操作 |
+          js-sort方法的正确使用 |
         
         天問</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Windows的Shell命令又是Windows的CMD命令。而cmd命令又是原来MS-DOS系统保留下来 Windows Shell命令是基于配置好的Path环境变量，对Shell命令在Path路径中依次从前至后搜寻到对应命名的可执行入口">
-<meta name="keywords" content="shell">
+    <meta name="description" content="JavaScript中的sort()方法用于对数组的元素进行排序。其中有许多误区一定要注意，不然就会带来意想不到的结果。">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows常用shell命令之文件操作">
-<meta property="og:url" content="//tiven.cn/ckqsvitws000ewo00nu1o76lf/index.html">
+<meta property="og:title" content="js-sort方法的正确使用">
+<meta property="og:url" content="https://tiven.cn/ckqsxiesn0007kc002nx9rgf7/index.html">
 <meta property="og:site_name" content="天問">
-<meta property="og:description" content="Windows的Shell命令又是Windows的CMD命令。而cmd命令又是原来MS-DOS系统保留下来 Windows Shell命令是基于配置好的Path环境变量，对Shell命令在Path路径中依次从前至后搜寻到对应命名的可执行入口">
+<meta property="og:description" content="JavaScript中的sort()方法用于对数组的元素进行排序。其中有许多误区一定要注意，不然就会带来意想不到的结果。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="//tiven.cn/assets/img/img-shell.jpg">
-<meta property="og:updated_time" content="2021-07-06T06:24:23.196Z">
+<meta property="og:updated_time" content="2021-07-01T04:07:01.005Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows常用shell命令之文件操作">
-<meta name="twitter:description" content="Windows的Shell命令又是Windows的CMD命令。而cmd命令又是原来MS-DOS系统保留下来 Windows Shell命令是基于配置好的Path环境变量，对Shell命令在Path路径中依次从前至后搜寻到对应命名的可执行入口">
-<meta name="twitter:image" content="//tiven.cn/assets/img/img-shell.jpg">
+<meta name="twitter:title" content="js-sort方法的正确使用">
+<meta name="twitter:description" content="JavaScript中的sort()方法用于对数组的元素进行排序。其中有许多误区一定要注意，不然就会带来意想不到的结果。">
     
         <link rel="alternate" href="/atom.xml" title="天問" type="application/atom+xml">
     
@@ -49,16 +45,15 @@
 
     <!--百度统计-->
     
-<script>
-  /*#你的百度统计代码*/
-  var _hmt = _hmt || []
-  ;(function () {
-    var hm = document.createElement('script')
-    hm.src = 'https://hm.baidu.com/hm.js?d053c375a2cb1b45a85c0dcf267d6c48'
-    var s = document.getElementsByTagName('script')[0]
-    s.parentNode.insertBefore(hm, s)
-  })()
-</script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?fe2c646568a28535597649e98142fc47";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 </head>
@@ -89,11 +84,23 @@
         >
         
         <a class="main-nav-link" href="/archives"
-          >归类</a
+          >归档</a
+        >
+        
+        <a class="main-nav-link" href="/categories"
+          >分类</a
         >
         
         <a class="main-nav-link" href="/about"
           >关于</a
+        >
+        
+        <a class="main-nav-link" href="/tag"
+          >标签</a
+        >
+        
+        <a class="main-nav-link" href="/tagcloud"
+          >标签云</a
         >
         
       </nav>
@@ -108,22 +115,22 @@
         
 <!--        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>-->
       </nav>
-<!--      <div id="search-form-wrap"><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="//tiven.cn"></form></div>-->
+<!--      <div id="search-form-wrap"><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tiven.cn"></form></div>-->
     </div>
   </div>
 </header>
 
         <div class="outer">
             <section id="main"><article
-  id="post-windows常用shell命令之文件操作"
+  id="post-js-sort方法的正确使用"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
 >
   <div class="article-meta">
-    <a href="/ckqsvitws000ewo00nu1o76lf/" class="article-date">
-  <time datetime="2020-07-06T02:28:51.000Z" itemprop="datePublished"
-    >2020-07-06</time
+    <a href="/ckqsxiesn0007kc002nx9rgf7/" class="article-date">
+  <time datetime="2016-12-16T05:30:26.000Z" itemprop="datePublished"
+    >2016-12-16</time
   >
 </a>
 
@@ -135,23 +142,40 @@
  
     <header class="article-header">
        
-<h1 class="article-title" itemprop="name">windows常用shell命令之文件操作</h1>
+<h1 class="article-title" itemprop="name">js-sort方法的正确使用</h1>
  
 
       <hr style="border: none; border-bottom: 1px solid #ddd" />
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-       <ol>
-<li>Windows的<code>Shell</code>命令又是Windows的<code>CMD</code>命令。而cmd命令又是原来MS-DOS系统保留下来</li>
-<li>Windows Shell命令是基于配置好的Path环境变量，对Shell命令在Path路径中依次从前至后搜寻到对应命名的可执行入口</li>
-</ol>
-<p><img src="//tiven.cn/assets/img/img-shell.jpg" alt="Shell"></p>
-<a id="more"></a>
-<h3 id="windows常用shell命令"><a href="#windows常用shell命令" class="headerlink" title="windows常用shell命令"></a>windows常用shell命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开命令行窗口</span></span><br><span class="line">Win + R键</span><br><span class="line">输入 cmd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建文件夹</span></span><br><span class="line">md folderName</span><br><span class="line">mkdir folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建多层文件夹</span></span><br><span class="line">md 01\02</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除空文件夹</span></span><br><span class="line">rmdir folderName</span><br><span class="line">rd folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除有内容文件夹 提示是否删除？</span></span><br><span class="line">rd /s folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接删除</span></span><br><span class="line">rd /s /q folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除单一文件</span></span><br><span class="line">del 0.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建文件</span></span><br><span class="line"><span class="built_in">type</span> nul &gt; demo.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建并编辑文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'Hello World'</span> &gt; test.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示一个目录中的文件和子目录</span></span><br><span class="line">dir</span><br></pre></td></tr></table></figure> 
+       <p>JavaScript中的sort()方法用于对数组的元素进行排序。其中有许多误区一定要注意，不然就会带来意想不到的结果。<br><a id="more"></a><br>下面就举几个具体事例来说明：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 想要的正常结果:</span></span><br><span class="line">[<span class="string">'Xiaomi'</span>, <span class="string">'Apple'</span>, <span class="string">'Oppo'</span>].sort(); <span class="comment">// ['Apple', 'Oppo', 'Xiaomi'];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 诡异的结果:</span></span><br><span class="line">[<span class="string">'Xiaomi'</span>, <span class="string">'apple'</span>, <span class="string">'Oppo'</span>].sort(); <span class="comment">// ['Oppo', 'Xiaomi", 'apple']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 无法理解的结果:</span></span><br><span class="line">[<span class="number">10</span>, <span class="number">22</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>].sort(); <span class="comment">// [1, 10, 2, 22, 8]</span></span><br></pre></td></tr></table></figure></p>
+<p>造成第二第结果的原因是，因为sort()方法是根据<code>字符串</code>的<code>ASCII码</code>进行排序，所谓的ASCII码也就是我们常说的<code>unicode</code>编码。<br>而<code>同一个</code>英文字母，<code>大写</code>与<code>小写</code>是有区别的，小写字母的ASCII码是排在大写字母的后边，所以得到这种结果也就见怪不怪了。</p>
+<ul>
+<li>解决方法其实也很简单：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'Xiaomi'</span>, <span class="string">'apple'</span>, <span class="string">'Oppo'</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">s1, s2</span>) </span>&#123;</span><br><span class="line">    x1 = s1.toUpperCase();</span><br><span class="line">    x2 = s2.toUpperCase();</span><br><span class="line">    <span class="keyword">if</span> (x1 &lt; x2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (x1 &gt; x2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;); <span class="comment">// ['apple', 'Oppo', 'Xiaomi']</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这里就是把arr中所有元素的大小写做了<code>统一处理</code>，要么都是大写，要么都是小写，这样就能避免大小写<code>unicode码</code>不同带来的困扰。</p>
+<p>造成第三种结果的原因是，因为sort()方法在处理数组时，其实是对数组中的所有元素做了<code>隐式转换</code>。<br>而<code>Number</code>类型的数字都被转换成了<code>String</code>类型的字符串，在unicode码比较大小时，是<code>从前到后</code>且<code>逐位</code>进行比较（先是比较数组中<code>所有</code>元素的<code>第一位</code>，接着是第二位，第三位…）。<br>自然而然，就得到<code>[1, 10, 2, 22, 8]</code>这样的结果。</p>
+<ul>
+<li>解决办法：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">22</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a-b</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">// [ 1, 2, 8, 10, 22 ]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>当然你也可以<code>倒序</code>排列：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">22</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b-a  <span class="comment">//这个顺序很重要</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">// [ 22, 10, 8, 2, 1 ]</span></span><br></pre></td></tr></table></figure></p>
+<p>关于参数<code>a</code>和<code>b</code>:</p>
+<pre><code>若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
+若 a 等于 b，则返回 0。
+若 a 大于 b，则返回一个大于 0 的值。
+</code></pre><p>W3C也有相关说明，<a href="http://www.w3school.com.cn/jsref/jsref_sort.asp" title="sort方法" target="_blank" rel="noopener">以供参考</a>。</p>
+<blockquote>
+<blockquote>
+<p>谢谢~O(∩_∩)O~</p>
+</blockquote>
+</blockquote>
+ 
     </div>
     <footer class="article-footer">
-       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul> 
+       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul> 
 
     </footer>
   </div>
@@ -159,23 +183,23 @@
 <nav id="article-nav">
   
   <a
-    href="/ckqsvitwy000fwo00z1bz83kl/"
+    href="/ckqsxiet6000akc00q5xdwf1e/"
     id="article-nav-newer"
     class="article-nav-link-wrap"
   >
     <strong class="article-nav-caption">上一篇</strong>
     <div class="article-nav-title">
-       前端工程化 
+       mongoose常见错误（一） 
     </div>
   </a>
    
   <a
-    href="/ckqsvitu10001wo009atjhjw5/"
+    href="/ckqsxiesh0006kc00s17apbqe/"
     id="article-nav-older"
     class="article-nav-link-wrap"
   >
     <strong class="article-nav-caption">下一篇</strong>
-    <div class="article-nav-title">JS中字符串和数组的基本操作</div>
+    <div class="article-nav-title">实现input图片上传预览的各种坑</div>
   </a>
   
 </nav>
@@ -214,31 +238,31 @@
     <ul>
       
       <li>
-        <a href="/ckqsvitwy000fwo00z1bz83kl/"
+        <a href="/ckqsxieti000dkc008jpn6b27/"
           >前端工程化</a
         >
       </li>
       
       <li>
-        <a href="/ckqsvitws000ewo00nu1o76lf/"
+        <a href="/ckqsxiete000ckc00zad87wg4/"
           >windows常用shell命令之文件操作</a
         >
       </li>
       
       <li>
-        <a href="/ckqsvitu10001wo009atjhjw5/"
+        <a href="/ckqsxies00003kc00y13aov1f/"
           >JS中字符串和数组的基本操作</a
         >
       </li>
       
       <li>
-        <a href="/ckqsvituk0003wo00mylh1dxr/"
+        <a href="/ckqsxier60001kc00nlhr4zl3/"
           >babel入门一篇搞定</a
         >
       </li>
       
       <li>
-        <a href="/ckqsvitwd000awo006tc703br/"
+        <a href="/ckqsxiesv0009kc002e6yjeox/"
           >seaJs模块化开发简单入门</a
         >
       </li>
@@ -317,9 +341,15 @@
   
   <a href="/" class="mobile-nav-link">主页</a>
   
-  <a href="/archives" class="mobile-nav-link">归类</a>
+  <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <a href="/categories" class="mobile-nav-link">分类</a>
   
   <a href="/about" class="mobile-nav-link">关于</a>
+  
+  <a href="/tag" class="mobile-nav-link">标签</a>
+  
+  <a href="/tagcloud" class="mobile-nav-link">标签云</a>
   
 </nav>
 
