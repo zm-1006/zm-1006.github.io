@@ -17,22 +17,22 @@
     
     <title>
         
-          mongoose常见错误（一） |
+          js-sort方法的正确使用 |
         
         天問</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="mongoose是一个将js对象与数据库产生关系的一个框架，让传统的直接操作数据库变成操作对象，从而间接的操作数据库。">
-<meta name="keywords" content="mongodb,mongoose">
+    <meta name="description" content="JavaScript中的sort()方法用于对数组的元素进行排序。其中有许多误区一定要注意，不然就会带来意想不到的结果。">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mongoose常见错误（一）">
-<meta property="og:url" content="//tiven.cn/ckqsuqu3x000a4g00s5wy5nnj/index.html">
+<meta property="og:title" content="js-sort方法的正确使用">
+<meta property="og:url" content="//tiven.cn/ckqsveoe60007e400bynjgkpy/index.html">
 <meta property="og:site_name" content="天問">
-<meta property="og:description" content="mongoose是一个将js对象与数据库产生关系的一个框架，让传统的直接操作数据库变成操作对象，从而间接的操作数据库。">
+<meta property="og:description" content="JavaScript中的sort()方法用于对数组的元素进行排序。其中有许多误区一定要注意，不然就会带来意想不到的结果。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-07-01T04:07:01.006Z">
+<meta property="og:updated_time" content="2021-07-01T04:07:01.005Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mongoose常见错误（一）">
-<meta name="twitter:description" content="mongoose是一个将js对象与数据库产生关系的一个框架，让传统的直接操作数据库变成操作对象，从而间接的操作数据库。">
+<meta name="twitter:title" content="js-sort方法的正确使用">
+<meta name="twitter:description" content="JavaScript中的sort()方法用于对数组的元素进行排序。其中有许多误区一定要注意，不然就会带来意想不到的结果。">
     
         <link rel="alternate" href="/atom.xml" title="天問" type="application/atom+xml">
     
@@ -113,15 +113,15 @@
 
         <div class="outer">
             <section id="main"><article
-  id="post-mongoose常见错误（一）"
+  id="post-js-sort方法的正确使用"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
 >
   <div class="article-meta">
-    <a href="/ckqsuqu3x000a4g00s5wy5nnj/" class="article-date">
-  <time datetime="2017-02-24T03:30:49.000Z" itemprop="datePublished"
-    >2017-02-24</time
+    <a href="/ckqsveoe60007e400bynjgkpy/" class="article-date">
+  <time datetime="2016-12-16T05:30:26.000Z" itemprop="datePublished"
+    >2016-12-16</time
   >
 </a>
 
@@ -133,30 +133,40 @@
  
     <header class="article-header">
        
-<h1 class="article-title" itemprop="name">mongoose常见错误（一）</h1>
+<h1 class="article-title" itemprop="name">js-sort方法的正确使用</h1>
  
 
       <hr style="border: none; border-bottom: 1px solid #ddd" />
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-       <p><code>mongoose</code>是一个将js对象与数据库产生关系的一个<code>框架</code>，让传统的直接操作数据库变成<code>操作对象</code>，从而间接的操作数据库。</p>
-<a id="more"></a>
+       <p>JavaScript中的sort()方法用于对数组的元素进行排序。其中有许多误区一定要注意，不然就会带来意想不到的结果。<br><a id="more"></a><br>下面就举几个具体事例来说明：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 想要的正常结果:</span></span><br><span class="line">[<span class="string">'Xiaomi'</span>, <span class="string">'Apple'</span>, <span class="string">'Oppo'</span>].sort(); <span class="comment">// ['Apple', 'Oppo', 'Xiaomi'];</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 诡异的结果:</span></span><br><span class="line">[<span class="string">'Xiaomi'</span>, <span class="string">'apple'</span>, <span class="string">'Oppo'</span>].sort(); <span class="comment">// ['Oppo', 'Xiaomi", 'apple']</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 无法理解的结果:</span></span><br><span class="line">[<span class="number">10</span>, <span class="number">22</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>].sort(); <span class="comment">// [1, 10, 2, 22, 8]</span></span><br></pre></td></tr></table></figure></p>
+<p>造成第二第结果的原因是，因为sort()方法是根据<code>字符串</code>的<code>ASCII码</code>进行排序，所谓的ASCII码也就是我们常说的<code>unicode</code>编码。<br>而<code>同一个</code>英文字母，<code>大写</code>与<code>小写</code>是有区别的，小写字母的ASCII码是排在大写字母的后边，所以得到这种结果也就见怪不怪了。</p>
 <ul>
-<li>mongoose操作流程：<code>创建类</code>——&gt;<code>实例化类</code>——&gt;<code>调用类方法</code>。<br>下面请看一个具体事例：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</span><br><span class="line"><span class="comment">// 连接数据库</span></span><br><span class="line">mongoose.connect(<span class="string">'mongodb://localhost/test'</span>);<span class="comment">// test ：是数据库名字 connections</span></span><br><span class="line"><span class="comment">// 创建了一个模型（相当于创建了一个“类”） ，People的模型。所有的People，都有名字，是字符串类型，</span></span><br><span class="line"><span class="keyword">var</span> People = mongoose.model(<span class="string">'People'</span>,&#123;<span class="attr">name</span>:<span class="built_in">String</span>&#125;);</span><br><span class="line"><span class="comment">// 实例化一个People</span></span><br><span class="line"><span class="keyword">var</span> zmnaer = <span class="keyword">new</span> People(&#123;<span class="attr">name</span>:<span class="string">'zmnaer'</span>&#125;);</span><br><span class="line"><span class="comment">// 调用这个People的save方法，保存这个人</span></span><br><span class="line">zmnaer.save(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'连接成功'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<li>解决方法其实也很简单：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'Xiaomi'</span>, <span class="string">'apple'</span>, <span class="string">'Oppo'</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">s1, s2</span>) </span>&#123;</span><br><span class="line">    x1 = s1.toUpperCase();</span><br><span class="line">    x2 = s2.toUpperCase();</span><br><span class="line">    <span class="keyword">if</span> (x1 &lt; x2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (x1 &gt; x2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;); <span class="comment">// ['apple', 'Oppo', 'Xiaomi']</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>当你运行之后往往会出现这样的警告：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(node:<span class="number">3800</span>) DeprecationWarning: Mongoose: mpromise (mongoose<span class="string">'s default promise library) is deprecated,</span></span><br><span class="line"><span class="string">plug in your own promise library instead: http://mongoosejs.com/docs/promises.html</span></span><br></pre></td></tr></table></figure></p>
-<p>如果你是一个追求完美主义的程序猿，看到这样的警告或者报错，心里肯定很不爽，必会寻求解决办法。<br>出现这个警告的原因是：因为mongoose在<code>4.1</code>版本后，<code>mpromise</code>（默认库）被弃用，需要为mongoose提供一个全局的<code>Promise</code>。<br>所以要在连接数据库前要加入：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongoose.Promise = global.Promise;</span><br></pre></td></tr></table></figure></p>
-<p>此处仅限解决出现警告的问题，如果要弄清楚其中缘由，请移步<a href="http://mongoosejs.com/" title="mongoose官网" target="_blank" rel="noopener">mongoose官网</a>查看具体API。</p>
-<hr>
+<p>这里就是把arr中所有元素的大小写做了<code>统一处理</code>，要么都是大写，要么都是小写，这样就能避免大小写<code>unicode码</code>不同带来的困扰。</p>
+<p>造成第三种结果的原因是，因为sort()方法在处理数组时，其实是对数组中的所有元素做了<code>隐式转换</code>。<br>而<code>Number</code>类型的数字都被转换成了<code>String</code>类型的字符串，在unicode码比较大小时，是<code>从前到后</code>且<code>逐位</code>进行比较（先是比较数组中<code>所有</code>元素的<code>第一位</code>，接着是第二位，第三位…）。<br>自然而然，就得到<code>[1, 10, 2, 22, 8]</code>这样的结果。</p>
 <ul>
-<li>参考博文：<a href="http://www.cnblogs.com/jay--zhang/p/5911667.html" target="_blank" rel="noopener">http://www.cnblogs.com/jay--zhang/p/5911667.html</a></li>
+<li>解决办法：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">22</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a-b</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">// [ 1, 2, 8, 10, 22 ]</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>当然你也可以<code>倒序</code>排列：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">22</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b-a  <span class="comment">//这个顺序很重要</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">// [ 22, 10, 8, 2, 1 ]</span></span><br></pre></td></tr></table></figure></p>
+<p>关于参数<code>a</code>和<code>b</code>:</p>
+<pre><code>若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
+若 a 等于 b，则返回 0。
+若 a 大于 b，则返回一个大于 0 的值。
+</code></pre><p>W3C也有相关说明，<a href="http://www.w3school.com.cn/jsref/jsref_sort.asp" title="sort方法" target="_blank" rel="noopener">以供参考</a>。</p>
+<blockquote>
+<blockquote>
+<p>谢谢~O(∩_∩)O~</p>
+</blockquote>
+</blockquote>
  
     </div>
     <footer class="article-footer">
-       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongoose/">mongoose</a></li></ul> 
+       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul> 
 
     </footer>
   </div>
@@ -164,23 +174,23 @@
 <nav id="article-nav">
   
   <a
-    href="/ckqsuqu4u000h4g006f3kd5zv/"
+    href="/ckqsveoef000ae400b7m8adue/"
     id="article-nav-newer"
     class="article-nav-link-wrap"
   >
     <strong class="article-nav-caption">上一篇</strong>
     <div class="article-nav-title">
-       原生js获取css样式 
+       mongoose常见错误（一） 
     </div>
   </a>
    
   <a
-    href="/ckqsuqu3k00074g00sd0lw5tw/"
+    href="/ckqsveodu0006e400140h0o1k/"
     id="article-nav-older"
     class="article-nav-link-wrap"
   >
     <strong class="article-nav-caption">下一篇</strong>
-    <div class="article-nav-title">js-sort方法的正确使用</div>
+    <div class="article-nav-title">实现input图片上传预览的各种坑</div>
   </a>
   
 </nav>
@@ -219,31 +229,31 @@
     <ul>
       
       <li>
-        <a href="/ckqsuqu4j000f4g00y42253v6/"
+        <a href="/ckqsveofc000fe400q5jxb26w/"
           >前端工程化</a
         >
       </li>
       
       <li>
-        <a href="/ckqsuqu4g000e4g00vrrgguiw/"
+        <a href="/ckqsveof3000ee400whmbth7b/"
           >windows常用shell命令之文件操作</a
         >
       </li>
       
       <li>
-        <a href="/ckqsuqu1u00014g00wdfra9jr/"
+        <a href="/ckqsveobu0001e4007hl3v218/"
           >JS中字符串和数组的基本操作</a
         >
       </li>
       
       <li>
-        <a href="/ckqsuqu2d00034g0006ld357a/"
+        <a href="/ckqsveock0003e400vo3gy9nc/"
           >babel入门一篇搞定</a
         >
       </li>
       
       <li>
-        <a href="/ckqsuqu48000c4g00stteq576/"
+        <a href="/ckqsveoeq000ce400tj6c695b/"
           >seaJs模块化开发简单入门</a
         >
       </li>

@@ -17,24 +17,22 @@
     
     <title>
         
-          windows常用shell命令之文件操作 |
+          原生js获取css样式 |
         
         天問</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Windows的Shell命令又是Windows的CMD命令。而cmd命令又是原来MS-DOS系统保留下来 Windows Shell命令是基于配置好的Path环境变量，对Shell命令在Path路径中依次从前至后搜寻到对应命名的可执行入口">
-<meta name="keywords" content="shell">
+    <meta name="description" content="在前端开发过程中往往需要动态的编辑、修改一个UI的样式，这必然涉及到style的获取与设置。一般都说有图有真相，而我们程序猿当然是用demo来说明一切，下面就根据一则具体事例探讨原生js获取css样式的方法。">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows常用shell命令之文件操作">
-<meta property="og:url" content="//tiven.cn/ckqsuqu4g000e4g00vrrgguiw/index.html">
+<meta property="og:title" content="原生js获取css样式">
+<meta property="og:url" content="//tiven.cn/ckqsveofs000he400jfn0yhaw/index.html">
 <meta property="og:site_name" content="天問">
-<meta property="og:description" content="Windows的Shell命令又是Windows的CMD命令。而cmd命令又是原来MS-DOS系统保留下来 Windows Shell命令是基于配置好的Path环境变量，对Shell命令在Path路径中依次从前至后搜寻到对应命名的可执行入口">
+<meta property="og:description" content="在前端开发过程中往往需要动态的编辑、修改一个UI的样式，这必然涉及到style的获取与设置。一般都说有图有真相，而我们程序猿当然是用demo来说明一切，下面就根据一则具体事例探讨原生js获取css样式的方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="//tiven.cn/assets/img/img-shell.jpg">
-<meta property="og:updated_time" content="2021-07-06T06:24:23.196Z">
+<meta property="og:updated_time" content="2021-07-01T04:07:01.011Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows常用shell命令之文件操作">
-<meta name="twitter:description" content="Windows的Shell命令又是Windows的CMD命令。而cmd命令又是原来MS-DOS系统保留下来 Windows Shell命令是基于配置好的Path环境变量，对Shell命令在Path路径中依次从前至后搜寻到对应命名的可执行入口">
-<meta name="twitter:image" content="//tiven.cn/assets/img/img-shell.jpg">
+<meta name="twitter:title" content="原生js获取css样式">
+<meta name="twitter:description" content="在前端开发过程中往往需要动态的编辑、修改一个UI的样式，这必然涉及到style的获取与设置。一般都说有图有真相，而我们程序猿当然是用demo来说明一切，下面就根据一则具体事例探讨原生js获取css样式的方法。">
     
         <link rel="alternate" href="/atom.xml" title="天問" type="application/atom+xml">
     
@@ -115,15 +113,15 @@
 
         <div class="outer">
             <section id="main"><article
-  id="post-windows常用shell命令之文件操作"
+  id="post-原生js获取css样式"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
 >
   <div class="article-meta">
-    <a href="/ckqsuqu4g000e4g00vrrgguiw/" class="article-date">
-  <time datetime="2020-07-06T02:28:51.000Z" itemprop="datePublished"
-    >2020-07-06</time
+    <a href="/ckqsveofs000he400jfn0yhaw/" class="article-date">
+  <time datetime="2017-03-10T08:10:33.000Z" itemprop="datePublished"
+    >2017-03-10</time
   >
 </a>
 
@@ -135,23 +133,50 @@
  
     <header class="article-header">
        
-<h1 class="article-title" itemprop="name">windows常用shell命令之文件操作</h1>
+<h1 class="article-title" itemprop="name">原生js获取css样式</h1>
  
 
       <hr style="border: none; border-bottom: 1px solid #ddd" />
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-       <ol>
-<li>Windows的<code>Shell</code>命令又是Windows的<code>CMD</code>命令。而cmd命令又是原来MS-DOS系统保留下来</li>
-<li>Windows Shell命令是基于配置好的Path环境变量，对Shell命令在Path路径中依次从前至后搜寻到对应命名的可执行入口</li>
-</ol>
-<p><img src="//tiven.cn/assets/img/img-shell.jpg" alt="Shell"></p>
-<a id="more"></a>
-<h3 id="windows常用shell命令"><a href="#windows常用shell命令" class="headerlink" title="windows常用shell命令"></a>windows常用shell命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开命令行窗口</span></span><br><span class="line">Win + R键</span><br><span class="line">输入 cmd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建文件夹</span></span><br><span class="line">md folderName</span><br><span class="line">mkdir folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建多层文件夹</span></span><br><span class="line">md 01\02</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除空文件夹</span></span><br><span class="line">rmdir folderName</span><br><span class="line">rd folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除有内容文件夹 提示是否删除？</span></span><br><span class="line">rd /s folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接删除</span></span><br><span class="line">rd /s /q folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除单一文件</span></span><br><span class="line">del 0.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建文件</span></span><br><span class="line"><span class="built_in">type</span> nul &gt; demo.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建并编辑文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'Hello World'</span> &gt; test.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示一个目录中的文件和子目录</span></span><br><span class="line">dir</span><br></pre></td></tr></table></figure> 
+       <p>在前端开发过程中往往需要动态的编辑、修改一个UI的样式，这必然涉及到style的获取与设置。<br>一般都说有图有真相，而我们程序猿当然是用<code>demo</code>来说明一切，下面就根据一则具体事例探讨原生js获取<code>css</code>样式的方法。<br><a id="more"></a></p>
+<ul>
+<li>事例<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        #div1&#123;</span><br><span class="line">            width: 200px;</span><br><span class="line">            background:#00f;</span><br><span class="line">            border: 1px solid #000;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span> <span class="attr">style</span>=<span class="string">"height:100px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>);</span></span><br><span class="line"><span class="javascript">        <span class="comment">// div的width</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(oDiv.style.width);</span></span><br><span class="line"><span class="javascript">        <span class="comment">// div的height</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(oDiv.style.height);</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>经过浏览器运行之后，在<code>console控制台</code>很明显有输出。</p>
+<ul>
+<li>第一行是空白；</li>
+<li>第二行会输出<code>100px</code>。</li>
+</ul>
+<p>很多人不明白是怎么回事，想要获取的<code>width</code>怎么是空白。<br>原来是因为直接用<code>oDiv.style</code>方法只能获取元素的<code>内联样式</code>，对于<code>内部样式</code>和<code>外联样式</code>，这种方法则不能取得。<br>因此要另寻出路，众所周知，IE浏览器总是别具一格，格外奇葩，所以这里还得解决兼容性问题：</p>
+<ul>
+<li><p>IE浏览器：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'div'</span>);</span><br><span class="line"><span class="keyword">var</span> styles = oDiv.currentStyle;</span><br><span class="line">styles.width;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他浏览器：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'div'</span>);</span><br><span class="line"><span class="keyword">var</span> style = <span class="built_in">window</span>.getComputedStyle(oDiv, <span class="literal">null</span>);</span><br><span class="line">styles.width;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>封装方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getStyle</span>(<span class="params">obj,attr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>提示：</strong></p>
+<ul>
+<li>这个方法需要传两个参数，<code>obj</code>是将要获取样式的元素，<code>attr</code>则是样式的属性，如<code>width</code>、<code>color</code>等，调用此方法时attr必须要加上<code>引号</code>，不然会报错；</li>
+<li>此方法只能获取<code>单一属性</code>样式，像<code>border</code>、<code>background</code>等具有<code>综合属性</code>的样式，只有<code>chrome</code>浏览器能获取；而其他浏览器只能通过<code>borderStyleColor</code>这种<code>驼峰命名</code>的<code>单一属性</code>来取得；</li>
+<li>如果使用的是jQuery，则不需要如此操作，可直接用<code>$(&#39;obj&#39;).css(&#39;attr&#39;)</code>来获取，因为JQ的底层就是用<code>currentStyle[attr]</code>和<code>getComputedStyle(obj)[attr]</code>这种方法进行封装的。</li>
+</ul>
+<p>参考博文：</p>
+<ul>
+<li><a href="http://blog.csdn.net/u011043843/article/details/39811211" target="_blank" rel="noopener">http://blog.csdn.net/u011043843/article/details/39811211</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue-currentstyle/" target="_blank" rel="noopener">http://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue-currentstyle/</a></li>
+</ul>
+ 
     </div>
     <footer class="article-footer">
-       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul> 
+       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul> 
 
     </footer>
   </div>
@@ -159,23 +184,23 @@
 <nav id="article-nav">
   
   <a
-    href="/ckqsuqu4j000f4g00y42253v6/"
+    href="/ckqsveog0000ie4007b7g8jj5/"
     id="article-nav-newer"
     class="article-nav-link-wrap"
   >
     <strong class="article-nav-caption">上一篇</strong>
     <div class="article-nav-title">
-       前端工程化 
+       学习webpack原来就是SoEasy 
     </div>
   </a>
    
   <a
-    href="/ckqsuqu1u00014g00wdfra9jr/"
+    href="/ckqsveoef000ae400b7m8adue/"
     id="article-nav-older"
     class="article-nav-link-wrap"
   >
     <strong class="article-nav-caption">下一篇</strong>
-    <div class="article-nav-title">JS中字符串和数组的基本操作</div>
+    <div class="article-nav-title">mongoose常见错误（一）</div>
   </a>
   
 </nav>
@@ -214,31 +239,31 @@
     <ul>
       
       <li>
-        <a href="/ckqsuqu4j000f4g00y42253v6/"
+        <a href="/ckqsveofc000fe400q5jxb26w/"
           >前端工程化</a
         >
       </li>
       
       <li>
-        <a href="/ckqsuqu4g000e4g00vrrgguiw/"
+        <a href="/ckqsveof3000ee400whmbth7b/"
           >windows常用shell命令之文件操作</a
         >
       </li>
       
       <li>
-        <a href="/ckqsuqu1u00014g00wdfra9jr/"
+        <a href="/ckqsveobu0001e4007hl3v218/"
           >JS中字符串和数组的基本操作</a
         >
       </li>
       
       <li>
-        <a href="/ckqsuqu2d00034g0006ld357a/"
+        <a href="/ckqsveock0003e400vo3gy9nc/"
           >babel入门一篇搞定</a
         >
       </li>
       
       <li>
-        <a href="/ckqsuqu48000c4g00stteq576/"
+        <a href="/ckqsveoeq000ce400tj6c695b/"
           >seaJs模块化开发简单入门</a
         >
       </li>
