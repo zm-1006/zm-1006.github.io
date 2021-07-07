@@ -17,24 +17,22 @@
     
     <title>
         
-          JS中字符串和数组的基本操作 |
+          mongoose常见错误（一） |
         
         天問</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="变量： 计算机开辟的一块内存空间。栈：计算机为基础类型（string、number、boolean）开辟的一块内存空间。堆：计算机为基础类型（object、array）开辟的一块内存空间。JavaScript字符串是引号中的零个或多个字符。数组是一种特殊的变量，它能够一次存放一个以上的值。">
-<meta name="keywords" content="js">
+    <meta name="description" content="mongoose是一个将js对象与数据库产生关系的一个框架，让传统的直接操作数据库变成操作对象，从而间接的操作数据库。">
+<meta name="keywords" content="mongodb,mongoose">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS中字符串和数组的基本操作">
-<meta property="og:url" content="//tiven.cn/ckqsveobu0001e4007hl3v218/index.html">
+<meta property="og:title" content="mongoose常见错误（一）">
+<meta property="og:url" content="//tiven.cn/ckqsvitvw0007wo00etvya0w3/index.html">
 <meta property="og:site_name" content="天問">
-<meta property="og:description" content="变量： 计算机开辟的一块内存空间。栈：计算机为基础类型（string、number、boolean）开辟的一块内存空间。堆：计算机为基础类型（object、array）开辟的一块内存空间。JavaScript字符串是引号中的零个或多个字符。数组是一种特殊的变量，它能够一次存放一个以上的值。">
+<meta property="og:description" content="mongoose是一个将js对象与数据库产生关系的一个框架，让传统的直接操作数据库变成操作对象，从而间接的操作数据库。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="//tiven.cn/assets/img/img-js.jpg">
-<meta property="og:updated_time" content="2021-07-06T06:21:50.680Z">
+<meta property="og:updated_time" content="2021-07-01T04:07:01.006Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS中字符串和数组的基本操作">
-<meta name="twitter:description" content="变量： 计算机开辟的一块内存空间。栈：计算机为基础类型（string、number、boolean）开辟的一块内存空间。堆：计算机为基础类型（object、array）开辟的一块内存空间。JavaScript字符串是引号中的零个或多个字符。数组是一种特殊的变量，它能够一次存放一个以上的值。">
-<meta name="twitter:image" content="//tiven.cn/assets/img/img-js.jpg">
+<meta name="twitter:title" content="mongoose常见错误（一）">
+<meta name="twitter:description" content="mongoose是一个将js对象与数据库产生关系的一个框架，让传统的直接操作数据库变成操作对象，从而间接的操作数据库。">
     
         <link rel="alternate" href="/atom.xml" title="天問" type="application/atom+xml">
     
@@ -115,15 +113,15 @@
 
         <div class="outer">
             <section id="main"><article
-  id="post-JS中字符串和数组的基本操作"
+  id="post-mongoose常见错误（一）"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
 >
   <div class="article-meta">
-    <a href="/ckqsveobu0001e4007hl3v218/" class="article-date">
-  <time datetime="2018-04-05T02:45:18.000Z" itemprop="datePublished"
-    >2018-04-05</time
+    <a href="/ckqsvitvw0007wo00etvya0w3/" class="article-date">
+  <time datetime="2017-02-24T03:30:49.000Z" itemprop="datePublished"
+    >2017-02-24</time
   >
 </a>
 
@@ -135,64 +133,30 @@
  
     <header class="article-header">
        
-<h1 class="article-title" itemprop="name">JS中字符串和数组的基本操作</h1>
+<h1 class="article-title" itemprop="name">mongoose常见错误（一）</h1>
  
 
       <hr style="border: none; border-bottom: 1px solid #ddd" />
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-       <p><strong>变量：</strong> 计算机开辟的一块内存空间。<br><code>栈</code>：计算机为基础类型（string、number、boolean）开辟的一块内存空间。<br><code>堆</code>：计算机为基础类型（object、array）开辟的一块内存空间。<br>JavaScript字符串是引号中的零个或多个字符。<br>数组是一种特殊的变量，它能够一次存放一个以上的值。</p>
-<p><img src="//tiven.cn/assets/img/img-js.jpg" alt="JavaScript"></p>
+       <p><code>mongoose</code>是一个将js对象与数据库产生关系的一个<code>框架</code>，让传统的直接操作数据库变成<code>操作对象</code>，从而间接的操作数据库。</p>
 <a id="more"></a>
 <ul>
-<li>1、length——长度</li>
+<li>mongoose操作流程：<code>创建类</code>——&gt;<code>实例化类</code>——&gt;<code>调用类方法</code>。<br>下面请看一个具体事例：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</span><br><span class="line"><span class="comment">// 连接数据库</span></span><br><span class="line">mongoose.connect(<span class="string">'mongodb://localhost/test'</span>);<span class="comment">// test ：是数据库名字 connections</span></span><br><span class="line"><span class="comment">// 创建了一个模型（相当于创建了一个“类”） ，People的模型。所有的People，都有名字，是字符串类型，</span></span><br><span class="line"><span class="keyword">var</span> People = mongoose.model(<span class="string">'People'</span>,&#123;<span class="attr">name</span>:<span class="built_in">String</span>&#125;);</span><br><span class="line"><span class="comment">// 实例化一个People</span></span><br><span class="line"><span class="keyword">var</span> zmnaer = <span class="keyword">new</span> People(&#123;<span class="attr">name</span>:<span class="string">'zmnaer'</span>&#125;);</span><br><span class="line"><span class="comment">// 调用这个People的save方法，保存这个人</span></span><br><span class="line">zmnaer.save(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'连接成功'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&apos;zmnaer&apos;;</span><br><span class="line">console.log(str.length);// 6</span><br><span class="line">/*引号中间的空格也算长度*/</span><br></pre></td></tr></table></figure>
+<p>当你运行之后往往会出现这样的警告：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(node:<span class="number">3800</span>) DeprecationWarning: Mongoose: mpromise (mongoose<span class="string">'s default promise library) is deprecated,</span></span><br><span class="line"><span class="string">plug in your own promise library instead: http://mongoosejs.com/docs/promises.html</span></span><br></pre></td></tr></table></figure></p>
+<p>如果你是一个追求完美主义的程序猿，看到这样的警告或者报错，心里肯定很不爽，必会寻求解决办法。<br>出现这个警告的原因是：因为mongoose在<code>4.1</code>版本后，<code>mpromise</code>（默认库）被弃用，需要为mongoose提供一个全局的<code>Promise</code>。<br>所以要在连接数据库前要加入：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongoose.Promise = global.Promise;</span><br></pre></td></tr></table></figure></p>
+<p>此处仅限解决出现警告的问题，如果要弄清楚其中缘由，请移步<a href="http://mongoosejs.com/" title="mongoose官网" target="_blank" rel="noopener">mongoose官网</a>查看具体API。</p>
+<hr>
 <ul>
-<li>2、charAt()——字符串索引对应的值</li>
+<li>参考博文：<a href="http://www.cnblogs.com/jay--zhang/p/5911667.html" target="_blank" rel="noopener">http://www.cnblogs.com/jay--zhang/p/5911667.html</a></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var str=&apos;zmnaer&apos;;</span><br><span class="line">console.log(str.charAt());// z</span><br><span class="line">console.log(str.charAt(0));// z</span><br><span class="line">console.log(str.charAt(11));// (空)</span><br><span class="line">console.log(str.charAt(-1));// (空)</span><br><span class="line">/*不写值，默认为0，大于字符串最大长度和取负数都返回值为空*/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>3、charCodeAt()——Unicode编码值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&apos;周&apos;.charCodeAt());// 21608</span><br></pre></td></tr></table></figure>
-<ul>
-<li>4、fromCharCode()——反译Unicode码</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(String.fromCharCode(21608,22937));// 周妙</span><br></pre></td></tr></table></figure>
-<ul>
-<li>5、substring——字符串截取</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var str=&apos;这是一个字符串&apos;;</span><br><span class="line">console.log(str.substring(2));// 一个字符串</span><br><span class="line">console.log(str.substring(0,2));// 这是</span><br><span class="line">console.log(str.substring(2,0));// 这是</span><br><span class="line">console.log(str.substring());// 这是一个字符串</span><br><span class="line">console.log(str.substring(0));// 这是一个字符串</span><br><span class="line">console.log(str.substring(-3,2));// 这是</span><br><span class="line">console.log(str.substring(2,-3));// 这是</span><br><span class="line">/*</span><br><span class="line">*不写参数默认为0，取所有</span><br><span class="line">*两个参数，会自动排序，值小的在前，大的在后</span><br><span class="line">*负数为自动转化为0</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>6、slice——字符串截取</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var str=&apos;这是一个字符串&apos;;</span><br><span class="line">console.log(str.slice(4));// 字符串</span><br><span class="line">console.log(str.slice(-2));// 符串</span><br><span class="line">console.log(str.slice(0,2));// 这是</span><br><span class="line">console.log(str.slice(2,0));// （空）</span><br><span class="line">console.log(str.slice(-2,-4));// 个字</span><br></pre></td></tr></table></figure>
-<ul>
-<li>7、toUpperCase()——转换成大写</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;zmnaer&apos;.toUpperCase());// ZMNAER</span><br></pre></td></tr></table></figure>
-<ul>
-<li>8、toLowerCse()——转换成小写</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;ZMnaer&apos;.toLowerCse());// zmnaer</span><br></pre></td></tr></table></figure>
-<ul>
-<li>9、split——字符串切割</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str=&apos;www.zmnaer.com&apos;;</span><br><span class="line">console.log(str.split(&apos;.&apos;);// [&apos;www&apos;,&apos;zmnaer&apos;,&apos;com&apos;]</span><br><span class="line">console.log(&apos;zmnaer&apos;.split());// [&apos;zmnaer&apos;]</span><br><span class="line">console.log(&apos;zmnaer&apos;.split(&apos;&apos;));// [&apos;z&apos;,&apos;m&apos;,&apos;n&apos;,&apos;a&apos;,&apos;e&apos;,&apos;r&apos;]</span><br><span class="line">console.log(&apos;zmnaer&apos;.split(&apos;m&apos;));// [&apos;z&apos;,&apos;naer&apos;]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>10、splice——删除、替换、添加（数组）</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&apos;aa&apos;,&apos;bb&apos;,11,22];</span><br><span class="line">1、删除</span><br><span class="line">arr.splice(0,1);console.log(arr);// [&apos;bb&apos;,11,22]</span><br><span class="line">arr.splice(0,2);console.log(arr);// [11,22]</span><br><span class="line">2、替换</span><br><span class="line">arr.splice(0,1,&apos;aaa&apos;);console.log(arr);// [&apos;aaa&apos;,&apos;bb&apos;,11,22]</span><br><span class="line">arr.splice(0,2,&apos;aaa&apos;);console.log(arr);// [&apos;aaa&apos;,11,22]</span><br><span class="line">3、添加</span><br><span class="line">arr.splice(0,0,&apos;edg&apos;);console.log(arr);// [&apos;edg&apos;,&apos;aa&apos;,&apos;bb&apos;,11,22]</span><br><span class="line">arr.splice(1,0,&apos;aabb&apos;);console.log(arr);// [&apos;aa&apos;,&apos;aabb&apos;,11,22]</span><br><span class="line">/* 添加多个 */</span><br><span class="line">arr.splice(1,0,&apos;aabb&apos;,&apos;abc&apos;);console.log(arr);// [&apos;aa&apos;,&apos;aabb&apos;,&apos;abc&apos;,11,22]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>11、reverse——颠倒(数组)</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/* 数组 */</span><br><span class="line">var arr = [1,2,3]</span><br><span class="line">arr.reverse();</span><br><span class="line">console.log(arr);// [3,2,1]</span><br><span class="line">/* 字符串 */</span><br><span class="line">var str = &apos;abcdef&apos;;</span><br><span class="line">console.log(str.split(&apos;&apos;).reverse().join(&apos;&apos;));// &apos;fedcba&apos;</span><br></pre></td></tr></table></figure>
  
     </div>
     <footer class="article-footer">
-       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul> 
+       <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongoose/">mongoose</a></li></ul> 
 
     </footer>
   </div>
@@ -200,23 +164,23 @@
 <nav id="article-nav">
   
   <a
-    href="/ckqsveof3000ee400whmbth7b/"
+    href="/ckqsvitx4000hwo0028ukohnc/"
     id="article-nav-newer"
     class="article-nav-link-wrap"
   >
     <strong class="article-nav-caption">上一篇</strong>
     <div class="article-nav-title">
-       windows常用shell命令之文件操作 
+       原生js获取css样式 
     </div>
   </a>
    
   <a
-    href="/ckqsveock0003e400vo3gy9nc/"
+    href="/ckqsvitvr0006wo00u37lgs9u/"
     id="article-nav-older"
     class="article-nav-link-wrap"
   >
     <strong class="article-nav-caption">下一篇</strong>
-    <div class="article-nav-title">babel入门一篇搞定</div>
+    <div class="article-nav-title">js-sort方法的正确使用</div>
   </a>
   
 </nav>
@@ -255,31 +219,31 @@
     <ul>
       
       <li>
-        <a href="/ckqsveofc000fe400q5jxb26w/"
+        <a href="/ckqsvitwy000fwo00z1bz83kl/"
           >前端工程化</a
         >
       </li>
       
       <li>
-        <a href="/ckqsveof3000ee400whmbth7b/"
+        <a href="/ckqsvitws000ewo00nu1o76lf/"
           >windows常用shell命令之文件操作</a
         >
       </li>
       
       <li>
-        <a href="/ckqsveobu0001e4007hl3v218/"
+        <a href="/ckqsvitu10001wo009atjhjw5/"
           >JS中字符串和数组的基本操作</a
         >
       </li>
       
       <li>
-        <a href="/ckqsveock0003e400vo3gy9nc/"
+        <a href="/ckqsvituk0003wo00mylh1dxr/"
           >babel入门一篇搞定</a
         >
       </li>
       
       <li>
-        <a href="/ckqsveoeq000ce400tj6c695b/"
+        <a href="/ckqsvitwd000awo006tc703br/"
           >seaJs模块化开发简单入门</a
         >
       </li>

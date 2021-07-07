@@ -17,22 +17,24 @@
     
     <title>
         
-          原生js获取css样式 |
+          JS中字符串和数组的基本操作 |
         
         天問</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="在前端开发过程中往往需要动态的编辑、修改一个UI的样式，这必然涉及到style的获取与设置。一般都说有图有真相，而我们程序猿当然是用demo来说明一切，下面就根据一则具体事例探讨原生js获取css样式的方法。">
+    <meta name="description" content="变量： 计算机开辟的一块内存空间。栈：计算机为基础类型（string、number、boolean）开辟的一块内存空间。堆：计算机为基础类型（object、array）开辟的一块内存空间。JavaScript字符串是引号中的零个或多个字符。数组是一种特殊的变量，它能够一次存放一个以上的值。">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="原生js获取css样式">
-<meta property="og:url" content="//tiven.cn/ckqsveofs000he400jfn0yhaw/index.html">
+<meta property="og:title" content="JS中字符串和数组的基本操作">
+<meta property="og:url" content="//tiven.cn/ckqsvitu10001wo009atjhjw5/index.html">
 <meta property="og:site_name" content="天問">
-<meta property="og:description" content="在前端开发过程中往往需要动态的编辑、修改一个UI的样式，这必然涉及到style的获取与设置。一般都说有图有真相，而我们程序猿当然是用demo来说明一切，下面就根据一则具体事例探讨原生js获取css样式的方法。">
+<meta property="og:description" content="变量： 计算机开辟的一块内存空间。栈：计算机为基础类型（string、number、boolean）开辟的一块内存空间。堆：计算机为基础类型（object、array）开辟的一块内存空间。JavaScript字符串是引号中的零个或多个字符。数组是一种特殊的变量，它能够一次存放一个以上的值。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-07-01T04:07:01.011Z">
+<meta property="og:image" content="//tiven.cn/assets/img/img-js.jpg">
+<meta property="og:updated_time" content="2021-07-06T06:21:50.680Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="原生js获取css样式">
-<meta name="twitter:description" content="在前端开发过程中往往需要动态的编辑、修改一个UI的样式，这必然涉及到style的获取与设置。一般都说有图有真相，而我们程序猿当然是用demo来说明一切，下面就根据一则具体事例探讨原生js获取css样式的方法。">
+<meta name="twitter:title" content="JS中字符串和数组的基本操作">
+<meta name="twitter:description" content="变量： 计算机开辟的一块内存空间。栈：计算机为基础类型（string、number、boolean）开辟的一块内存空间。堆：计算机为基础类型（object、array）开辟的一块内存空间。JavaScript字符串是引号中的零个或多个字符。数组是一种特殊的变量，它能够一次存放一个以上的值。">
+<meta name="twitter:image" content="//tiven.cn/assets/img/img-js.jpg">
     
         <link rel="alternate" href="/atom.xml" title="天問" type="application/atom+xml">
     
@@ -113,15 +115,15 @@
 
         <div class="outer">
             <section id="main"><article
-  id="post-原生js获取css样式"
+  id="post-JS中字符串和数组的基本操作"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
 >
   <div class="article-meta">
-    <a href="/ckqsveofs000he400jfn0yhaw/" class="article-date">
-  <time datetime="2017-03-10T08:10:33.000Z" itemprop="datePublished"
-    >2017-03-10</time
+    <a href="/ckqsvitu10001wo009atjhjw5/" class="article-date">
+  <time datetime="2018-04-05T02:45:18.000Z" itemprop="datePublished"
+    >2018-04-05</time
   >
 </a>
 
@@ -133,46 +135,60 @@
  
     <header class="article-header">
        
-<h1 class="article-title" itemprop="name">原生js获取css样式</h1>
+<h1 class="article-title" itemprop="name">JS中字符串和数组的基本操作</h1>
  
 
       <hr style="border: none; border-bottom: 1px solid #ddd" />
     </header>
     
     <div class="article-entry" itemprop="articleBody">
-       <p>在前端开发过程中往往需要动态的编辑、修改一个UI的样式，这必然涉及到style的获取与设置。<br>一般都说有图有真相，而我们程序猿当然是用<code>demo</code>来说明一切，下面就根据一则具体事例探讨原生js获取<code>css</code>样式的方法。<br><a id="more"></a></p>
+       <p><strong>变量：</strong> 计算机开辟的一块内存空间。<br><code>栈</code>：计算机为基础类型（string、number、boolean）开辟的一块内存空间。<br><code>堆</code>：计算机为基础类型（object、array）开辟的一块内存空间。<br>JavaScript字符串是引号中的零个或多个字符。<br>数组是一种特殊的变量，它能够一次存放一个以上的值。</p>
+<p><img src="//tiven.cn/assets/img/img-js.jpg" alt="JavaScript"></p>
+<a id="more"></a>
 <ul>
-<li>事例<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        #div1&#123;</span><br><span class="line">            width: 200px;</span><br><span class="line">            background:#00f;</span><br><span class="line">            border: 1px solid #000;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span> <span class="attr">style</span>=<span class="string">"height:100px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>);</span></span><br><span class="line"><span class="javascript">        <span class="comment">// div的width</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(oDiv.style.width);</span></span><br><span class="line"><span class="javascript">        <span class="comment">// div的height</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(oDiv.style.height);</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>1、length——长度</li>
 </ul>
-<p>经过浏览器运行之后，在<code>console控制台</code>很明显有输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&apos;zmnaer&apos;;</span><br><span class="line">console.log(str.length);// 6</span><br><span class="line">/*引号中间的空格也算长度*/</span><br></pre></td></tr></table></figure>
 <ul>
-<li>第一行是空白；</li>
-<li>第二行会输出<code>100px</code>。</li>
+<li>2、charAt()——字符串索引对应的值</li>
 </ul>
-<p>很多人不明白是怎么回事，想要获取的<code>width</code>怎么是空白。<br>原来是因为直接用<code>oDiv.style</code>方法只能获取元素的<code>内联样式</code>，对于<code>内部样式</code>和<code>外联样式</code>，这种方法则不能取得。<br>因此要另寻出路，众所周知，IE浏览器总是别具一格，格外奇葩，所以这里还得解决兼容性问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var str=&apos;zmnaer&apos;;</span><br><span class="line">console.log(str.charAt());// z</span><br><span class="line">console.log(str.charAt(0));// z</span><br><span class="line">console.log(str.charAt(11));// (空)</span><br><span class="line">console.log(str.charAt(-1));// (空)</span><br><span class="line">/*不写值，默认为0，大于字符串最大长度和取负数都返回值为空*/</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>IE浏览器：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'div'</span>);</span><br><span class="line"><span class="keyword">var</span> styles = oDiv.currentStyle;</span><br><span class="line">styles.width;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>其他浏览器：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'div'</span>);</span><br><span class="line"><span class="keyword">var</span> style = <span class="built_in">window</span>.getComputedStyle(oDiv, <span class="literal">null</span>);</span><br><span class="line">styles.width;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>封装方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getStyle</span>(<span class="params">obj,attr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>3、charCodeAt()——Unicode编码值</li>
 </ul>
-<p><strong>提示：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&apos;周&apos;.charCodeAt());// 21608</span><br></pre></td></tr></table></figure>
 <ul>
-<li>这个方法需要传两个参数，<code>obj</code>是将要获取样式的元素，<code>attr</code>则是样式的属性，如<code>width</code>、<code>color</code>等，调用此方法时attr必须要加上<code>引号</code>，不然会报错；</li>
-<li>此方法只能获取<code>单一属性</code>样式，像<code>border</code>、<code>background</code>等具有<code>综合属性</code>的样式，只有<code>chrome</code>浏览器能获取；而其他浏览器只能通过<code>borderStyleColor</code>这种<code>驼峰命名</code>的<code>单一属性</code>来取得；</li>
-<li>如果使用的是jQuery，则不需要如此操作，可直接用<code>$(&#39;obj&#39;).css(&#39;attr&#39;)</code>来获取，因为JQ的底层就是用<code>currentStyle[attr]</code>和<code>getComputedStyle(obj)[attr]</code>这种方法进行封装的。</li>
+<li>4、fromCharCode()——反译Unicode码</li>
 </ul>
-<p>参考博文：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(String.fromCharCode(21608,22937));// 周妙</span><br></pre></td></tr></table></figure>
 <ul>
-<li><a href="http://blog.csdn.net/u011043843/article/details/39811211" target="_blank" rel="noopener">http://blog.csdn.net/u011043843/article/details/39811211</a></li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue-currentstyle/" target="_blank" rel="noopener">http://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue-currentstyle/</a></li>
+<li>5、substring——字符串截取</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var str=&apos;这是一个字符串&apos;;</span><br><span class="line">console.log(str.substring(2));// 一个字符串</span><br><span class="line">console.log(str.substring(0,2));// 这是</span><br><span class="line">console.log(str.substring(2,0));// 这是</span><br><span class="line">console.log(str.substring());// 这是一个字符串</span><br><span class="line">console.log(str.substring(0));// 这是一个字符串</span><br><span class="line">console.log(str.substring(-3,2));// 这是</span><br><span class="line">console.log(str.substring(2,-3));// 这是</span><br><span class="line">/*</span><br><span class="line">*不写参数默认为0，取所有</span><br><span class="line">*两个参数，会自动排序，值小的在前，大的在后</span><br><span class="line">*负数为自动转化为0</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>6、slice——字符串截取</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var str=&apos;这是一个字符串&apos;;</span><br><span class="line">console.log(str.slice(4));// 字符串</span><br><span class="line">console.log(str.slice(-2));// 符串</span><br><span class="line">console.log(str.slice(0,2));// 这是</span><br><span class="line">console.log(str.slice(2,0));// （空）</span><br><span class="line">console.log(str.slice(-2,-4));// 个字</span><br></pre></td></tr></table></figure>
+<ul>
+<li>7、toUpperCase()——转换成大写</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;zmnaer&apos;.toUpperCase());// ZMNAER</span><br></pre></td></tr></table></figure>
+<ul>
+<li>8、toLowerCse()——转换成小写</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;ZMnaer&apos;.toLowerCse());// zmnaer</span><br></pre></td></tr></table></figure>
+<ul>
+<li>9、split——字符串切割</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str=&apos;www.zmnaer.com&apos;;</span><br><span class="line">console.log(str.split(&apos;.&apos;);// [&apos;www&apos;,&apos;zmnaer&apos;,&apos;com&apos;]</span><br><span class="line">console.log(&apos;zmnaer&apos;.split());// [&apos;zmnaer&apos;]</span><br><span class="line">console.log(&apos;zmnaer&apos;.split(&apos;&apos;));// [&apos;z&apos;,&apos;m&apos;,&apos;n&apos;,&apos;a&apos;,&apos;e&apos;,&apos;r&apos;]</span><br><span class="line">console.log(&apos;zmnaer&apos;.split(&apos;m&apos;));// [&apos;z&apos;,&apos;naer&apos;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>10、splice——删除、替换、添加（数组）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&apos;aa&apos;,&apos;bb&apos;,11,22];</span><br><span class="line">1、删除</span><br><span class="line">arr.splice(0,1);console.log(arr);// [&apos;bb&apos;,11,22]</span><br><span class="line">arr.splice(0,2);console.log(arr);// [11,22]</span><br><span class="line">2、替换</span><br><span class="line">arr.splice(0,1,&apos;aaa&apos;);console.log(arr);// [&apos;aaa&apos;,&apos;bb&apos;,11,22]</span><br><span class="line">arr.splice(0,2,&apos;aaa&apos;);console.log(arr);// [&apos;aaa&apos;,11,22]</span><br><span class="line">3、添加</span><br><span class="line">arr.splice(0,0,&apos;edg&apos;);console.log(arr);// [&apos;edg&apos;,&apos;aa&apos;,&apos;bb&apos;,11,22]</span><br><span class="line">arr.splice(1,0,&apos;aabb&apos;);console.log(arr);// [&apos;aa&apos;,&apos;aabb&apos;,11,22]</span><br><span class="line">/* 添加多个 */</span><br><span class="line">arr.splice(1,0,&apos;aabb&apos;,&apos;abc&apos;);console.log(arr);// [&apos;aa&apos;,&apos;aabb&apos;,&apos;abc&apos;,11,22]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>11、reverse——颠倒(数组)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/* 数组 */</span><br><span class="line">var arr = [1,2,3]</span><br><span class="line">arr.reverse();</span><br><span class="line">console.log(arr);// [3,2,1]</span><br><span class="line">/* 字符串 */</span><br><span class="line">var str = &apos;abcdef&apos;;</span><br><span class="line">console.log(str.split(&apos;&apos;).reverse().join(&apos;&apos;));// &apos;fedcba&apos;</span><br></pre></td></tr></table></figure>
  
     </div>
     <footer class="article-footer">
@@ -184,23 +200,23 @@
 <nav id="article-nav">
   
   <a
-    href="/ckqsveog0000ie4007b7g8jj5/"
+    href="/ckqsvitws000ewo00nu1o76lf/"
     id="article-nav-newer"
     class="article-nav-link-wrap"
   >
     <strong class="article-nav-caption">上一篇</strong>
     <div class="article-nav-title">
-       学习webpack原来就是SoEasy 
+       windows常用shell命令之文件操作 
     </div>
   </a>
    
   <a
-    href="/ckqsveoef000ae400b7m8adue/"
+    href="/ckqsvituk0003wo00mylh1dxr/"
     id="article-nav-older"
     class="article-nav-link-wrap"
   >
     <strong class="article-nav-caption">下一篇</strong>
-    <div class="article-nav-title">mongoose常见错误（一）</div>
+    <div class="article-nav-title">babel入门一篇搞定</div>
   </a>
   
 </nav>
@@ -239,31 +255,31 @@
     <ul>
       
       <li>
-        <a href="/ckqsveofc000fe400q5jxb26w/"
+        <a href="/ckqsvitwy000fwo00z1bz83kl/"
           >前端工程化</a
         >
       </li>
       
       <li>
-        <a href="/ckqsveof3000ee400whmbth7b/"
+        <a href="/ckqsvitws000ewo00nu1o76lf/"
           >windows常用shell命令之文件操作</a
         >
       </li>
       
       <li>
-        <a href="/ckqsveobu0001e4007hl3v218/"
+        <a href="/ckqsvitu10001wo009atjhjw5/"
           >JS中字符串和数组的基本操作</a
         >
       </li>
       
       <li>
-        <a href="/ckqsveock0003e400vo3gy9nc/"
+        <a href="/ckqsvituk0003wo00mylh1dxr/"
           >babel入门一篇搞定</a
         >
       </li>
       
       <li>
-        <a href="/ckqsveoeq000ce400tj6c695b/"
+        <a href="/ckqsvitwd000awo006tc703br/"
           >seaJs模块化开发简单入门</a
         >
       </li>
