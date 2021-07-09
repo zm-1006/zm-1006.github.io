@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1, user-scalable=no">
     <!--百度抓取验证-->
     <meta name="baidu-site-verification" content="code-rYJ9CRyrPR">
     <!--定义网页的关键字，供搜索引擎搜索-->
-    <meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 松枫 hexo 前端 HTML H5 javascript coding">
+    <meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 天問e站 松枫 hexo 前端 HTML H5 javascript coding">
     <!--设置网页作者-->
     <meta name="author" content="tiven">
     <!--设置网页版权-->
@@ -18,9 +20,8 @@
           关于我 |
         
         天問</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="1992年：出生于湖北十堰 1999年-2012年：（传说中的世界末日，现在世界依然好好的）糊里糊涂的念完了小学到高中 2012年：就读于武汉生物工程学院，也许是高中热爱生物，大学云里雾里就修了生物技术专业 2015年：毕业于武汉生物工程学院 因为专业关系，实习进入了工厂化验室，安安静静地工作了整整九个月，貌似是一天不多一天不少，听起来也是完美无缺，可谁曾想，在这个大街上一抓一大把大学生的时代，">
-<meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 松枫 hexo 前端 HTML H5 javascript coding">
+<meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 天問e站 松枫 hexo 前端 HTML H5 javascript coding">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于我">
 <meta property="og:url" content="https://tiven.cn/about/index.html">
@@ -281,7 +282,22 @@
       }, 500);
     })
 
+    console.log(123)
+    // $.get('http://data.zz.baidu.com/urls?site=https://www.tiven.cn&token=QZWCDMydKCiY8doP', function(res){
+    //   console.log(res)
+    // })
+
+    pushBaidu()
   })
+
+  function pushBaidu(){
+    let img = new Image()
+    img.src = 'http://data.zz.baidu.com/urls?site=https://www.tiven.cn&token=QZWCDMydKCiY8doP'
+    document.body.appendChild(img)
+    img.onload = function () {
+      console.log('ok')
+    }
+  }
 
 
 </script>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1, user-scalable=no">
     <!--百度抓取验证-->
     <meta name="baidu-site-verification" content="code-rYJ9CRyrPR">
     <!--定义网页的关键字，供搜索引擎搜索-->
-    <meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 松枫 hexo 前端 HTML H5 javascript coding">
+    <meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 天問e站 松枫 hexo 前端 HTML H5 javascript coding">
     <!--设置网页作者-->
     <meta name="author" content="tiven">
     <!--设置网页版权-->
@@ -18,7 +20,6 @@
           windows常用shell命令之文件操作 |
         
         天問</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Windows的Shell命令又是Windows的CMD命令。而cmd命令又是原来MS-DOS系统保留下来 Windows Shell命令是基于配置好的Path环境变量，对Shell命令在Path路径中依次从前至后搜寻到对应命名的可执行入口">
 <meta name="keywords" content="shell">
 <meta property="og:type" content="article">
@@ -298,7 +299,22 @@
       }, 500);
     })
 
+    console.log(123)
+    // $.get('http://data.zz.baidu.com/urls?site=https://www.tiven.cn&token=QZWCDMydKCiY8doP', function(res){
+    //   console.log(res)
+    // })
+
+    pushBaidu()
   })
+
+  function pushBaidu(){
+    let img = new Image()
+    img.src = 'http://data.zz.baidu.com/urls?site=https://www.tiven.cn&token=QZWCDMydKCiY8doP'
+    document.body.appendChild(img)
+    img.onload = function () {
+      console.log('ok')
+    }
+  }
 
 
 </script>

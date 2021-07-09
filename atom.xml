@@ -99,11 +99,11 @@
     
     
     
-    <category term="js" scheme="https://tiven.cn/tags/js/"/>
-    
     <category term="babel" scheme="https://tiven.cn/tags/babel/"/>
     
     <category term="ES6" scheme="https://tiven.cn/tags/ES6/"/>
+    
+    <category term="js" scheme="https://tiven.cn/tags/js/"/>
     
   </entry>
   

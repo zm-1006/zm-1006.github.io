@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1, user-scalable=no">
     <!--百度抓取验证-->
     <meta name="baidu-site-verification" content="code-rYJ9CRyrPR">
     <!--定义网页的关键字，供搜索引擎搜索-->
-    <meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 松枫 hexo 前端 HTML H5 javascript coding">
+    <meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 天問e站 松枫 hexo 前端 HTML H5 javascript coding">
     <!--设置网页作者-->
     <meta name="author" content="tiven">
     <!--设置网页版权-->
@@ -18,7 +20,6 @@
           mongoose常见错误（一） |
         
         天問</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="mongoose是一个将js对象与数据库产生关系的一个框架，让传统的直接操作数据库变成操作对象，从而间接的操作数据库。">
 <meta name="keywords" content="mongodb,mongoose">
 <meta property="og:type" content="article">
@@ -303,7 +304,22 @@
       }, 500);
     })
 
+    console.log(123)
+    // $.get('http://data.zz.baidu.com/urls?site=https://www.tiven.cn&token=QZWCDMydKCiY8doP', function(res){
+    //   console.log(res)
+    // })
+
+    pushBaidu()
   })
+
+  function pushBaidu(){
+    let img = new Image()
+    img.src = 'http://data.zz.baidu.com/urls?site=https://www.tiven.cn&token=QZWCDMydKCiY8doP'
+    document.body.appendChild(img)
+    img.onload = function () {
+      console.log('ok')
+    }
+  }
 
 
 </script>

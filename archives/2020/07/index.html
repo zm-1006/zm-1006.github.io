@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1, user-scalable=no">
     <!--百度抓取验证-->
     <meta name="baidu-site-verification" content="code-rYJ9CRyrPR">
     <!--定义网页的关键字，供搜索引擎搜索-->
-    <meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 松枫 hexo 前端 HTML H5 javascript coding">
+    <meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 天問e站 松枫 hexo 前端 HTML H5 javascript coding">
     <!--设置网页作者-->
     <meta name="author" content="tiven">
     <!--设置网页版权-->
@@ -18,9 +20,8 @@
           归档: 2020/7 |
         
         天問</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="天問的个人网站，分享coding的魅力。生命不息，奋斗不止，ing...">
-<meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 松枫 hexo 前端 HTML H5 javascript coding">
+<meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 天問e站 松枫 hexo 前端 HTML H5 javascript coding">
 <meta property="og:type" content="website">
 <meta property="og:title" content="天問">
 <meta property="og:url" content="https://tiven.cn/archives/2020/07/index.html">
@@ -265,7 +266,22 @@
       }, 500);
     })
 
+    console.log(123)
+    // $.get('http://data.zz.baidu.com/urls?site=https://www.tiven.cn&token=QZWCDMydKCiY8doP', function(res){
+    //   console.log(res)
+    // })
+
+    pushBaidu()
   })
+
+  function pushBaidu(){
+    let img = new Image()
+    img.src = 'http://data.zz.baidu.com/urls?site=https://www.tiven.cn&token=QZWCDMydKCiY8doP'
+    document.body.appendChild(img)
+    img.onload = function () {
+      console.log('ok')
+    }
+  }
 
 
 </script>

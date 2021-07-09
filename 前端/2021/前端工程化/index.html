@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1, user-scalable=no">
     <!--百度抓取验证-->
     <meta name="baidu-site-verification" content="code-rYJ9CRyrPR">
     <!--定义网页的关键字，供搜索引擎搜索-->
-    <meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 松枫 hexo 前端 HTML H5 javascript coding">
+    <meta name="keywords" content="tiven tiven.cn zmnaer zmer 天問 天問e站 松枫 hexo 前端 HTML H5 javascript coding">
     <!--设置网页作者-->
     <meta name="author" content="tiven">
     <!--设置网页版权-->
@@ -18,7 +20,6 @@
           前端工程化 |
         
         天問</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="工程化即系统化、模块化、规范化的一个过程。如果说计算机科学要解决的是系统的某个具体问题，或者更通俗点说是面向编码的，那么工程化要解决的是如何提高整个系统生产效率。">
 <meta name="keywords" content="前端工程化,规范">
 <meta property="og:type" content="article">
@@ -379,7 +380,22 @@ CommonJS 加载模块是同步的，所以只有加载完成才能执行后面�
       }, 500);
     })
 
+    console.log(123)
+    // $.get('http://data.zz.baidu.com/urls?site=https://www.tiven.cn&token=QZWCDMydKCiY8doP', function(res){
+    //   console.log(res)
+    // })
+
+    pushBaidu()
   })
+
+  function pushBaidu(){
+    let img = new Image()
+    img.src = 'http://data.zz.baidu.com/urls?site=https://www.tiven.cn&token=QZWCDMydKCiY8doP'
+    document.body.appendChild(img)
+    img.onload = function () {
+      console.log('ok')
+    }
+  }
 
 
 </script>
