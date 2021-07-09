@@ -127,61 +127,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JS中字符串和数组的基本操作</title>
-    <url>/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2018/JS%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p><strong>变量：</strong> 计算机开辟的一块内存空间。<br><code>栈</code>：计算机为基础类型（string、number、boolean）开辟的一块内存空间。<br><code>堆</code>：计算机为基础类型（object、array）开辟的一块内存空间。<br>JavaScript字符串是引号中的零个或多个字符。<br>数组是一种特殊的变量，它能够一次存放一个以上的值。</p>
-<p><img src="//tiven.cn/assets/img/img-js.jpg" alt="JavaScript"></p>
-<a id="more"></a>
-<ul>
-<li>1、length——长度</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str=&apos;zmnaer&apos;;</span><br><span class="line">console.log(str.length);// 6</span><br><span class="line">/*引号中间的空格也算长度*/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>2、charAt()——字符串索引对应的值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str=&apos;zmnaer&apos;;</span><br><span class="line">console.log(str.charAt());// z</span><br><span class="line">console.log(str.charAt(0));// z</span><br><span class="line">console.log(str.charAt(11));// (空)</span><br><span class="line">console.log(str.charAt(-1));// (空)</span><br><span class="line">/*不写值，默认为0，大于字符串最大长度和取负数都返回值为空*/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>3、charCodeAt()——Unicode编码值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alert(&apos;周&apos;.charCodeAt());// 21608</span><br></pre></td></tr></table></figure>
-<ul>
-<li>4、fromCharCode()——反译Unicode码</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(String.fromCharCode(21608,22937));// 周妙</span><br></pre></td></tr></table></figure>
-<ul>
-<li>5、substring——字符串截取</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str=&apos;这是一个字符串&apos;;</span><br><span class="line">console.log(str.substring(2));// 一个字符串</span><br><span class="line">console.log(str.substring(0,2));// 这是</span><br><span class="line">console.log(str.substring(2,0));// 这是</span><br><span class="line">console.log(str.substring());// 这是一个字符串</span><br><span class="line">console.log(str.substring(0));// 这是一个字符串</span><br><span class="line">console.log(str.substring(-3,2));// 这是</span><br><span class="line">console.log(str.substring(2,-3));// 这是</span><br><span class="line">/*</span><br><span class="line">*不写参数默认为0，取所有</span><br><span class="line">*两个参数，会自动排序，值小的在前，大的在后</span><br><span class="line">*负数为自动转化为0</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>6、slice——字符串截取</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str=&apos;这是一个字符串&apos;;</span><br><span class="line">console.log(str.slice(4));// 字符串</span><br><span class="line">console.log(str.slice(-2));// 符串</span><br><span class="line">console.log(str.slice(0,2));// 这是</span><br><span class="line">console.log(str.slice(2,0));// （空）</span><br><span class="line">console.log(str.slice(-2,-4));// 个字</span><br></pre></td></tr></table></figure>
-<ul>
-<li>7、toUpperCase()——转换成大写</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(&apos;zmnaer&apos;.toUpperCase());// ZMNAER</span><br></pre></td></tr></table></figure>
-<ul>
-<li>8、toLowerCse()——转换成小写</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(&apos;ZMnaer&apos;.toLowerCse());// zmnaer</span><br></pre></td></tr></table></figure>
-<ul>
-<li>9、split——字符串切割</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str=&apos;www.zmnaer.com&apos;;</span><br><span class="line">console.log(str.split(&apos;.&apos;);// [&apos;www&apos;,&apos;zmnaer&apos;,&apos;com&apos;]</span><br><span class="line">console.log(&apos;zmnaer&apos;.split());// [&apos;zmnaer&apos;]</span><br><span class="line">console.log(&apos;zmnaer&apos;.split(&apos;&apos;));// [&apos;z&apos;,&apos;m&apos;,&apos;n&apos;,&apos;a&apos;,&apos;e&apos;,&apos;r&apos;]</span><br><span class="line">console.log(&apos;zmnaer&apos;.split(&apos;m&apos;));// [&apos;z&apos;,&apos;naer&apos;]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>10、splice——删除、替换、添加（数组）</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr = [&apos;aa&apos;,&apos;bb&apos;,11,22];</span><br><span class="line">1、删除</span><br><span class="line">arr.splice(0,1);console.log(arr);// [&apos;bb&apos;,11,22]</span><br><span class="line">arr.splice(0,2);console.log(arr);// [11,22]</span><br><span class="line">2、替换</span><br><span class="line">arr.splice(0,1,&apos;aaa&apos;);console.log(arr);// [&apos;aaa&apos;,&apos;bb&apos;,11,22]</span><br><span class="line">arr.splice(0,2,&apos;aaa&apos;);console.log(arr);// [&apos;aaa&apos;,11,22]</span><br><span class="line">3、添加</span><br><span class="line">arr.splice(0,0,&apos;edg&apos;);console.log(arr);// [&apos;edg&apos;,&apos;aa&apos;,&apos;bb&apos;,11,22]</span><br><span class="line">arr.splice(1,0,&apos;aabb&apos;);console.log(arr);// [&apos;aa&apos;,&apos;aabb&apos;,11,22]</span><br><span class="line">/* 添加多个 */</span><br><span class="line">arr.splice(1,0,&apos;aabb&apos;,&apos;abc&apos;);console.log(arr);// [&apos;aa&apos;,&apos;aabb&apos;,&apos;abc&apos;,11,22]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>11、reverse——颠倒(数组)</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/* 数组 */</span><br><span class="line">var arr = [1,2,3]</span><br><span class="line">arr.reverse();</span><br><span class="line">console.log(arr);// [3,2,1]</span><br><span class="line">/* 字符串 */</span><br><span class="line">var str = &apos;abcdef&apos;;</span><br><span class="line">console.log(str.split(&apos;&apos;).reverse().join(&apos;&apos;));// &apos;fedcba&apos;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>实现input图片上传预览的各种坑</title>
     <url>/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2016/inputUpdate/</url>
     <content><![CDATA[<p>input实现图片上传看似很简单，但只有当自己真正去做时，才发现到处都是坑，一不小心就掉进去了。<br><a id="more"></a></p>
@@ -273,6 +218,61 @@
       </tags>
   </entry>
   <entry>
+    <title>JS中字符串和数组的基本操作</title>
+    <url>/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2018/JS%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p><strong>变量：</strong> 计算机开辟的一块内存空间。<br><code>栈</code>：计算机为基础类型（string、number、boolean）开辟的一块内存空间。<br><code>堆</code>：计算机为基础类型（object、array）开辟的一块内存空间。<br>JavaScript字符串是引号中的零个或多个字符。<br>数组是一种特殊的变量，它能够一次存放一个以上的值。</p>
+<p><img src="//tiven.cn/assets/img/img-js.jpg" alt="JavaScript"></p>
+<a id="more"></a>
+<ul>
+<li>1、length——长度</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str=&apos;zmnaer&apos;;</span><br><span class="line">console.log(str.length);// 6</span><br><span class="line">/*引号中间的空格也算长度*/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2、charAt()——字符串索引对应的值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str=&apos;zmnaer&apos;;</span><br><span class="line">console.log(str.charAt());// z</span><br><span class="line">console.log(str.charAt(0));// z</span><br><span class="line">console.log(str.charAt(11));// (空)</span><br><span class="line">console.log(str.charAt(-1));// (空)</span><br><span class="line">/*不写值，默认为0，大于字符串最大长度和取负数都返回值为空*/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3、charCodeAt()——Unicode编码值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alert(&apos;周&apos;.charCodeAt());// 21608</span><br></pre></td></tr></table></figure>
+<ul>
+<li>4、fromCharCode()——反译Unicode码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(String.fromCharCode(21608,22937));// 周妙</span><br></pre></td></tr></table></figure>
+<ul>
+<li>5、substring——字符串截取</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str=&apos;这是一个字符串&apos;;</span><br><span class="line">console.log(str.substring(2));// 一个字符串</span><br><span class="line">console.log(str.substring(0,2));// 这是</span><br><span class="line">console.log(str.substring(2,0));// 这是</span><br><span class="line">console.log(str.substring());// 这是一个字符串</span><br><span class="line">console.log(str.substring(0));// 这是一个字符串</span><br><span class="line">console.log(str.substring(-3,2));// 这是</span><br><span class="line">console.log(str.substring(2,-3));// 这是</span><br><span class="line">/*</span><br><span class="line">*不写参数默认为0，取所有</span><br><span class="line">*两个参数，会自动排序，值小的在前，大的在后</span><br><span class="line">*负数为自动转化为0</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>6、slice——字符串截取</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str=&apos;这是一个字符串&apos;;</span><br><span class="line">console.log(str.slice(4));// 字符串</span><br><span class="line">console.log(str.slice(-2));// 符串</span><br><span class="line">console.log(str.slice(0,2));// 这是</span><br><span class="line">console.log(str.slice(2,0));// （空）</span><br><span class="line">console.log(str.slice(-2,-4));// 个字</span><br></pre></td></tr></table></figure>
+<ul>
+<li>7、toUpperCase()——转换成大写</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(&apos;zmnaer&apos;.toUpperCase());// ZMNAER</span><br></pre></td></tr></table></figure>
+<ul>
+<li>8、toLowerCse()——转换成小写</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(&apos;ZMnaer&apos;.toLowerCse());// zmnaer</span><br></pre></td></tr></table></figure>
+<ul>
+<li>9、split——字符串切割</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str=&apos;www.zmnaer.com&apos;;</span><br><span class="line">console.log(str.split(&apos;.&apos;);// [&apos;www&apos;,&apos;zmnaer&apos;,&apos;com&apos;]</span><br><span class="line">console.log(&apos;zmnaer&apos;.split());// [&apos;zmnaer&apos;]</span><br><span class="line">console.log(&apos;zmnaer&apos;.split(&apos;&apos;));// [&apos;z&apos;,&apos;m&apos;,&apos;n&apos;,&apos;a&apos;,&apos;e&apos;,&apos;r&apos;]</span><br><span class="line">console.log(&apos;zmnaer&apos;.split(&apos;m&apos;));// [&apos;z&apos;,&apos;naer&apos;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>10、splice——删除、替换、添加（数组）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr = [&apos;aa&apos;,&apos;bb&apos;,11,22];</span><br><span class="line">1、删除</span><br><span class="line">arr.splice(0,1);console.log(arr);// [&apos;bb&apos;,11,22]</span><br><span class="line">arr.splice(0,2);console.log(arr);// [11,22]</span><br><span class="line">2、替换</span><br><span class="line">arr.splice(0,1,&apos;aaa&apos;);console.log(arr);// [&apos;aaa&apos;,&apos;bb&apos;,11,22]</span><br><span class="line">arr.splice(0,2,&apos;aaa&apos;);console.log(arr);// [&apos;aaa&apos;,11,22]</span><br><span class="line">3、添加</span><br><span class="line">arr.splice(0,0,&apos;edg&apos;);console.log(arr);// [&apos;edg&apos;,&apos;aa&apos;,&apos;bb&apos;,11,22]</span><br><span class="line">arr.splice(1,0,&apos;aabb&apos;);console.log(arr);// [&apos;aa&apos;,&apos;aabb&apos;,11,22]</span><br><span class="line">/* 添加多个 */</span><br><span class="line">arr.splice(1,0,&apos;aabb&apos;,&apos;abc&apos;);console.log(arr);// [&apos;aa&apos;,&apos;aabb&apos;,&apos;abc&apos;,11,22]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>11、reverse——颠倒(数组)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/* 数组 */</span><br><span class="line">var arr = [1,2,3]</span><br><span class="line">arr.reverse();</span><br><span class="line">console.log(arr);// [3,2,1]</span><br><span class="line">/* 字符串 */</span><br><span class="line">var str = &apos;abcdef&apos;;</span><br><span class="line">console.log(str.split(&apos;&apos;).reverse().join(&apos;&apos;));// &apos;fedcba&apos;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mongoose常见错误（一）</title>
     <url>/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2017/mongoose%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     <content><![CDATA[<p><code>mongoose</code>是一个将js对象与数据库产生关系的一个<code>框架</code>，让传统的直接操作数据库变成<code>操作对象</code>，从而间接的操作数据库。</p>
@@ -323,20 +323,6 @@
 ]]></content>
       <tags>
         <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>windows常用shell命令之文件操作</title>
-    <url>/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2020/windows%E5%B8%B8%E7%94%A8shell%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<ol>
-<li>Windows的<code>Shell</code>命令又是Windows的<code>CMD</code>命令。而cmd命令又是原来MS-DOS系统保留下来</li>
-<li>Windows Shell命令是基于配置好的Path环境变量，对Shell命令在Path路径中依次从前至后搜寻到对应命名的可执行入口</li>
-</ol>
-<p><img src="//tiven.cn/assets/img/img-shell.jpg" alt="Shell"></p>
-<a id="more"></a>
-<h3 id="windows常用shell命令"><a href="#windows常用shell命令" class="headerlink" title="windows常用shell命令"></a>windows常用shell命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开命令行窗口</span></span><br><span class="line">Win + R键</span><br><span class="line">输入 cmd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建文件夹</span></span><br><span class="line">md folderName</span><br><span class="line">mkdir folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建多层文件夹</span></span><br><span class="line">md 01\02</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除空文件夹</span></span><br><span class="line">rmdir folderName</span><br><span class="line">rd folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除有内容文件夹 提示是否删除？</span></span><br><span class="line">rd /s folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接删除</span></span><br><span class="line">rd /s /q folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除单一文件</span></span><br><span class="line">del 0.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建文件</span></span><br><span class="line"><span class="built_in">type</span> nul &gt; demo.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建并编辑文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'Hello World'</span> &gt; test.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示一个目录中的文件和子目录</span></span><br><span class="line">dir</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>shell</tag>
       </tags>
   </entry>
   <entry>
@@ -405,6 +391,125 @@
         <tag>seajs</tag>
         <tag>CMD</tag>
         <tag>模块化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows常用shell命令之文件操作</title>
+    <url>/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2020/windows%E5%B8%B8%E7%94%A8shell%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<ol>
+<li>Windows的<code>Shell</code>命令又是Windows的<code>CMD</code>命令。而cmd命令又是原来MS-DOS系统保留下来</li>
+<li>Windows Shell命令是基于配置好的Path环境变量，对Shell命令在Path路径中依次从前至后搜寻到对应命名的可执行入口</li>
+</ol>
+<p><img src="//tiven.cn/assets/img/img-shell.jpg" alt="Shell"></p>
+<a id="more"></a>
+<h3 id="windows常用shell命令"><a href="#windows常用shell命令" class="headerlink" title="windows常用shell命令"></a>windows常用shell命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开命令行窗口</span></span><br><span class="line">Win + R键</span><br><span class="line">输入 cmd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建文件夹</span></span><br><span class="line">md folderName</span><br><span class="line">mkdir folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建多层文件夹</span></span><br><span class="line">md 01\02</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除空文件夹</span></span><br><span class="line">rmdir folderName</span><br><span class="line">rd folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除有内容文件夹 提示是否删除？</span></span><br><span class="line">rd /s folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接删除</span></span><br><span class="line">rd /s /q folderName</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除单一文件</span></span><br><span class="line">del 0.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建文件</span></span><br><span class="line"><span class="built_in">type</span> nul &gt; demo.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建并编辑文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'Hello World'</span> &gt; test.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示一个目录中的文件和子目录</span></span><br><span class="line">dir</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端工程化</title>
+    <url>/%E5%89%8D%E7%AB%AF/2021/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/</url>
+    <content><![CDATA[<p>工程化即系统化、模块化、规范化的一个过程。<br>如果说计算机科学要解决的是系统的某个具体问题，或者更通俗点说是面向编码的，那么工程化要解决的是如何提高整个系统生产效率。</p>
+<p><img src="//tiven.cn/assets/img/img-web-01.jpg" alt="Web"></p>
+<a id="more"></a>
+<p>前端工程化包含如下：</p>
+<pre><code>1.代码规范: 保证团队所有成员以同样的规范开发代码。
+2.分支管理: 不同的开发人员开发不同的功能或组件，按照统一的流程合并到主干。
+3.模块管理: 一方面，团队引用的模块应该是规范的;另一方面，必须保证这些模块可以正确的加入到最终编译好的包文件中。（以上两点可以总结为模块化或者组件化开发。）
+4.自动化测试：为了保证和并进主干的代码达到质量标准，必须有测试，而且测试应该是自动化的，可以回归的。
+5.构建：主干更新以后，自动将代码编译为最终的目标格式，并且准备好各种静态资源，
+6.部署。 将构建好的代码部署到生产环境。
+</code></pre><h2 id="一、模块化"><a href="#一、模块化" class="headerlink" title="一、模块化"></a>一、模块化</h2><p><strong>定义：</strong> 模块化就是将一个大文件拆分成相互依赖的小文件，再进行统一的拼装和加载。（方便了多人协作）。</p>
+<h3 id="JS模块化方案："><a href="#JS模块化方案：" class="headerlink" title="JS模块化方案："></a>JS模块化方案：</h3><pre><code>1、CommonJS的核心思想是把一个文件当做一个模块，要在哪里使用这个模块，就在哪里require这个模块，然后require方法开始加载这个模块并且执行其中的代码，最后会返回你指定的export对象。
+CommonJS 加载模块是同步的，所以只有加载完成才能执行后面的操作，不能非阻塞的并行加载多个模块。
+2、AMD（异步模块定义，Asynchronous Module Definition），特点是可以实现异步加载模块，等所有模块都加载并且解释执行完成后，才会执行接下来的代码。
+3、ES6 的模块功能汲取了CommonJS 和 AMD 的优点，拥有简洁的语法并支持异步加载，并且还有其他诸多更好的支持（例如导入是实时只读的。（CommonJS 只是相当于把导出的代码复制过来））。
+</code></pre><h3 id="CSS模块化方案："><a href="#CSS模块化方案：" class="headerlink" title="CSS模块化方案："></a>CSS模块化方案：</h3><ul>
+<li>在less、sass、stylus等预处理器的import/mixin特性支持下实现、css modules。</li>
+<li>虽然SASS、LESS、Stylus等预处理器实现了CSS的文件拆分，但没有解决CSS模块化的一个重要问题：选择器的全局污染问题;</li>
+<li>CSS in JS是彻底抛弃CSS，使用JS或JSON来写样式。这种方法很激进，不能利用现有的CSS技术，而且处理伪类等问题比较困难；</li>
+<li>CSS Modules 原理：使用JS 来管理样式模块，它能够最大化地结合CSS生态和JS模块化能力，通过在每个 class 名后带一个独一无二 hash 值，这样就不有存在全局命名冲突的问题了。</li>
+<li>webpack 自带的 css-loader 组件，自带了 CSS Modules，通过简单的配置即可使用。</li>
+</ul>
+<h2 id="二、组件化"><a href="#二、组件化" class="headerlink" title="二、组件化"></a>二、组件化</h2><p><strong>定义：</strong></p>
+<blockquote>
+<p>将一个完整的页面/系统/产品，根据功能性、复用性</p>
+</blockquote>
+<blockquote>
+<p>页面上所有的东西都是组件。页面是个大型组件，可以拆成若干个中型组件，然后中型组件还可以再拆，拆成若干个小型组件，小型组件也可以再拆，直到拆成DOM元素为止。DOM元素可以看成是浏览器自身的组件，作为组件的基本单元。</p>
+</blockquote>
+<blockquote>
+<p>组件化实际上是一种按照模板(HTML)+样式(CSS)+逻辑(JS)三位一体的形式对面向对象的进一步抽象。</p>
+</blockquote>
+<p>实现方案：</p>
+<ol>
+<li>页面上的每个独立的可视/可交互区域视为一个组件；</li>
+<li>==每个组件对应一个工程目录==，组件所需的各种资源都在这个目录下就近维护；</li>
+<li>由于组件具有独立性，因此组件与组件之间可以 自由组合；</li>
+<li>页面只不过是组件的容器，负责组合组件形成功能完整的界面；</li>
+<li>当不需要某个组件，或者想要替换组件时，可以整个目录删除/替换。</li>
+</ol>
+<h3 id="目录结构的制定"><a href="#目录结构的制定" class="headerlink" title="目录结构的制定"></a>目录结构的制定</h3><p>目录结构的合理设定，能为项目带来很多优点：</p>
+<pre><code>有助于提高项目的逻辑结构合理性；
+对应扩展和合作；
+方便资源的统一定位管理。
+</code></pre><h3 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h3><blockquote>
+<p>制定一套良好的编码规范可以增强团队开发协作、提高代码质量。</p>
+</blockquote>
+<p>推荐参考<code>凹凸实验室</code>打造的前端代码规范。</p>
+<p>编码规范包括：</p>
+<h4 id="HTML规范"><a href="#HTML规范" class="headerlink" title="HTML规范"></a>HTML规范</h4><blockquote>
+<p>基于 W3C、苹果开发者 等官方文档，并结合团队业务和开发过程中总结的规范约定，让页面HTML代码更具语义性。</p>
+</blockquote>
+<h4 id="CSS规范"><a href="#CSS规范" class="headerlink" title="CSS规范"></a>CSS规范</h4><blockquote>
+<p>统一规范团队 CSS 代码书写风格和使用 CSS 预编译语言语法风格，提供常用媒体查询语句和浏览器私有属性引用，并从业务层面统一规范常用模块的引用。</p>
+</blockquote>
+<h4 id="JS规范"><a href="#JS规范" class="headerlink" title="JS规范"></a>JS规范</h4><blockquote>
+<p>统一规范团队 CSS 代码书写风格和使用 CSS 预编译语言语法风格，提供常用媒体查询语句和浏览器私有属性引用，并从业务层面统一规范常用模块的引用。</p>
+</blockquote>
+<h4 id="图片规范"><a href="#图片规范" class="headerlink" title="图片规范"></a>图片规范</h4><blockquote>
+<p>了解各种图片格式特性，根据特性制定图片规范，包括但不限于图片的质量约定、图片引入方式、图片合并处理等，旨在从图片层面优化页面性能。</p>
+</blockquote>
+<h4 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h4><blockquote>
+<p>从 目录、图片、HTML/CSS文件、ClassName 的命名等层面约定规范团队的命名习惯，增强团队代码的可读性。</p>
+</blockquote>
+<h4 id="前后端接口规范"><a href="#前后端接口规范" class="headerlink" title="前后端接口规范"></a>前后端接口规范</h4><ul>
+<li>“基于 Ajax 带来的 SPA 时代”，这种模式下，前后端的分工非常清晰，前后端的关键协作点是 Ajax 接口，引发一个重要问题：前后端的对接界面双方却关注甚少，没有任何接口约定规范情况下各自撸起袖子就是干，导致我们在产品项目开发过程中，前后端的接口联调对接工作量占比在30%-50%左右，甚至会更高。往往前后端接口联调对接及系统间的联调对接都是整个产品项目研发的软肋。</li>
+<li>接口规范主要初衷就是规范约定先行，尽量避免沟通联调产生的不必要的问题，让大家身心愉快地专注于各自擅长的领域。</li>
+</ul>
+<p>对于这一SPA阶段，前后端分离有几个重要的关注挑战：</p>
+<h5 id="职责分离"><a href="#职责分离" class="headerlink" title="职责分离"></a>职责分离</h5><pre><code>前后端仅仅通过异步接口(AJAX/JSONP)来编程；
+前后端都各自有自己的开发流程，构建工具，测试集合；
+关注点分离，前后端变得相对独立并松耦合。
+</code></pre><h5 id="规范原则"><a href="#规范原则" class="headerlink" title="规范原则"></a>规范原则</h5><pre><code>接口返回数据即显示，前端仅做渲染逻辑处理；
+渲染逻辑禁止跨多个接口调用；
+前端关注交互、渲染逻辑，尽量避免业务逻辑处理的出现；
+请求响应传输数据格式：JSON，JSON数据尽量简单轻量，避免多级JSON的出现；
+</code></pre><h5 id="响应格式"><a href="#响应格式" class="headerlink" title="响应格式"></a>响应格式</h5><pre><code>响应基本格式及处理状态值的规范
+基本响应格式
+列表响应格式
+</code></pre><h5 id="特殊内容"><a href="#特殊内容" class="headerlink" title="特殊内容"></a>特殊内容</h5><pre><code>下拉框、复选框、单选框统一由后端逻辑判定选中返回给前端展示；
+关于Boolean类型，JSON数据传输中一律使用1/0来标示，1为是/True，0为否/False
+关于日期类型，JSON数据传输中一律使用字符串，具体日期格式因业务而定；
+</code></pre><h5 id="文档规范"><a href="#文档规范" class="headerlink" title="文档规范"></a>文档规范</h5><h5 id="组件管理"><a href="#组件管理" class="headerlink" title="组件管理"></a>组件管理</h5><h5 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h5><h2 id="三、自动化"><a href="#三、自动化" class="headerlink" title="三、自动化"></a>三、自动化</h2><blockquote>
+<p>前端工程化的很多脏活累活都应该交给自动化工具来完成。</p>
+</blockquote>
+<p>需要秉持的一个理念是:</p>
+<pre><code>任何简单机械的重复劳动都应该让机器去完成
+图标合并
+持续继承
+自动化构建
+自动化部署
+自动化测试
+</code></pre><p><img src="//tiven.cn/assets/img/img-web-02.jpg" alt="工程化"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端工程化</tag>
+        <tag>规范</tag>
       </tags>
   </entry>
   <entry>
@@ -798,111 +903,6 @@ webpack --config webpack.react.config.js    // 针对react
       <tags>
         <tag>Markdown</tag>
         <tag>编辑</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端工程化</title>
-    <url>/%E5%89%8D%E7%AB%AF/2021/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/</url>
-    <content><![CDATA[<p>工程化即系统化、模块化、规范化的一个过程。<br>如果说计算机科学要解决的是系统的某个具体问题，或者更通俗点说是面向编码的，那么工程化要解决的是如何提高整个系统生产效率。</p>
-<p><img src="//tiven.cn/assets/img/img-web-01.jpg" alt="Web"></p>
-<a id="more"></a>
-<p>前端工程化包含如下：</p>
-<pre><code>1.代码规范: 保证团队所有成员以同样的规范开发代码。
-2.分支管理: 不同的开发人员开发不同的功能或组件，按照统一的流程合并到主干。
-3.模块管理: 一方面，团队引用的模块应该是规范的;另一方面，必须保证这些模块可以正确的加入到最终编译好的包文件中。（以上两点可以总结为模块化或者组件化开发。）
-4.自动化测试：为了保证和并进主干的代码达到质量标准，必须有测试，而且测试应该是自动化的，可以回归的。
-5.构建：主干更新以后，自动将代码编译为最终的目标格式，并且准备好各种静态资源，
-6.部署。 将构建好的代码部署到生产环境。
-</code></pre><h2 id="一、模块化"><a href="#一、模块化" class="headerlink" title="一、模块化"></a>一、模块化</h2><p><strong>定义：</strong> 模块化就是将一个大文件拆分成相互依赖的小文件，再进行统一的拼装和加载。（方便了多人协作）。</p>
-<h3 id="JS模块化方案："><a href="#JS模块化方案：" class="headerlink" title="JS模块化方案："></a>JS模块化方案：</h3><pre><code>1、CommonJS的核心思想是把一个文件当做一个模块，要在哪里使用这个模块，就在哪里require这个模块，然后require方法开始加载这个模块并且执行其中的代码，最后会返回你指定的export对象。
-CommonJS 加载模块是同步的，所以只有加载完成才能执行后面的操作，不能非阻塞的并行加载多个模块。
-2、AMD（异步模块定义，Asynchronous Module Definition），特点是可以实现异步加载模块，等所有模块都加载并且解释执行完成后，才会执行接下来的代码。
-3、ES6 的模块功能汲取了CommonJS 和 AMD 的优点，拥有简洁的语法并支持异步加载，并且还有其他诸多更好的支持（例如导入是实时只读的。（CommonJS 只是相当于把导出的代码复制过来））。
-</code></pre><h3 id="CSS模块化方案："><a href="#CSS模块化方案：" class="headerlink" title="CSS模块化方案："></a>CSS模块化方案：</h3><ul>
-<li>在less、sass、stylus等预处理器的import/mixin特性支持下实现、css modules。</li>
-<li>虽然SASS、LESS、Stylus等预处理器实现了CSS的文件拆分，但没有解决CSS模块化的一个重要问题：选择器的全局污染问题;</li>
-<li>CSS in JS是彻底抛弃CSS，使用JS或JSON来写样式。这种方法很激进，不能利用现有的CSS技术，而且处理伪类等问题比较困难；</li>
-<li>CSS Modules 原理：使用JS 来管理样式模块，它能够最大化地结合CSS生态和JS模块化能力，通过在每个 class 名后带一个独一无二 hash 值，这样就不有存在全局命名冲突的问题了。</li>
-<li>webpack 自带的 css-loader 组件，自带了 CSS Modules，通过简单的配置即可使用。</li>
-</ul>
-<h2 id="二、组件化"><a href="#二、组件化" class="headerlink" title="二、组件化"></a>二、组件化</h2><p><strong>定义：</strong></p>
-<blockquote>
-<p>将一个完整的页面/系统/产品，根据功能性、复用性</p>
-</blockquote>
-<blockquote>
-<p>页面上所有的东西都是组件。页面是个大型组件，可以拆成若干个中型组件，然后中型组件还可以再拆，拆成若干个小型组件，小型组件也可以再拆，直到拆成DOM元素为止。DOM元素可以看成是浏览器自身的组件，作为组件的基本单元。</p>
-</blockquote>
-<blockquote>
-<p>组件化实际上是一种按照模板(HTML)+样式(CSS)+逻辑(JS)三位一体的形式对面向对象的进一步抽象。</p>
-</blockquote>
-<p>实现方案：</p>
-<ol>
-<li>页面上的每个独立的可视/可交互区域视为一个组件；</li>
-<li>==每个组件对应一个工程目录==，组件所需的各种资源都在这个目录下就近维护；</li>
-<li>由于组件具有独立性，因此组件与组件之间可以 自由组合；</li>
-<li>页面只不过是组件的容器，负责组合组件形成功能完整的界面；</li>
-<li>当不需要某个组件，或者想要替换组件时，可以整个目录删除/替换。</li>
-</ol>
-<h3 id="目录结构的制定"><a href="#目录结构的制定" class="headerlink" title="目录结构的制定"></a>目录结构的制定</h3><p>目录结构的合理设定，能为项目带来很多优点：</p>
-<pre><code>有助于提高项目的逻辑结构合理性；
-对应扩展和合作；
-方便资源的统一定位管理。
-</code></pre><h3 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h3><blockquote>
-<p>制定一套良好的编码规范可以增强团队开发协作、提高代码质量。</p>
-</blockquote>
-<p>推荐参考<code>凹凸实验室</code>打造的前端代码规范。</p>
-<p>编码规范包括：</p>
-<h4 id="HTML规范"><a href="#HTML规范" class="headerlink" title="HTML规范"></a>HTML规范</h4><blockquote>
-<p>基于 W3C、苹果开发者 等官方文档，并结合团队业务和开发过程中总结的规范约定，让页面HTML代码更具语义性。</p>
-</blockquote>
-<h4 id="CSS规范"><a href="#CSS规范" class="headerlink" title="CSS规范"></a>CSS规范</h4><blockquote>
-<p>统一规范团队 CSS 代码书写风格和使用 CSS 预编译语言语法风格，提供常用媒体查询语句和浏览器私有属性引用，并从业务层面统一规范常用模块的引用。</p>
-</blockquote>
-<h4 id="JS规范"><a href="#JS规范" class="headerlink" title="JS规范"></a>JS规范</h4><blockquote>
-<p>统一规范团队 CSS 代码书写风格和使用 CSS 预编译语言语法风格，提供常用媒体查询语句和浏览器私有属性引用，并从业务层面统一规范常用模块的引用。</p>
-</blockquote>
-<h4 id="图片规范"><a href="#图片规范" class="headerlink" title="图片规范"></a>图片规范</h4><blockquote>
-<p>了解各种图片格式特性，根据特性制定图片规范，包括但不限于图片的质量约定、图片引入方式、图片合并处理等，旨在从图片层面优化页面性能。</p>
-</blockquote>
-<h4 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h4><blockquote>
-<p>从 目录、图片、HTML/CSS文件、ClassName 的命名等层面约定规范团队的命名习惯，增强团队代码的可读性。</p>
-</blockquote>
-<h4 id="前后端接口规范"><a href="#前后端接口规范" class="headerlink" title="前后端接口规范"></a>前后端接口规范</h4><ul>
-<li>“基于 Ajax 带来的 SPA 时代”，这种模式下，前后端的分工非常清晰，前后端的关键协作点是 Ajax 接口，引发一个重要问题：前后端的对接界面双方却关注甚少，没有任何接口约定规范情况下各自撸起袖子就是干，导致我们在产品项目开发过程中，前后端的接口联调对接工作量占比在30%-50%左右，甚至会更高。往往前后端接口联调对接及系统间的联调对接都是整个产品项目研发的软肋。</li>
-<li>接口规范主要初衷就是规范约定先行，尽量避免沟通联调产生的不必要的问题，让大家身心愉快地专注于各自擅长的领域。</li>
-</ul>
-<p>对于这一SPA阶段，前后端分离有几个重要的关注挑战：</p>
-<h5 id="职责分离"><a href="#职责分离" class="headerlink" title="职责分离"></a>职责分离</h5><pre><code>前后端仅仅通过异步接口(AJAX/JSONP)来编程；
-前后端都各自有自己的开发流程，构建工具，测试集合；
-关注点分离，前后端变得相对独立并松耦合。
-</code></pre><h5 id="规范原则"><a href="#规范原则" class="headerlink" title="规范原则"></a>规范原则</h5><pre><code>接口返回数据即显示，前端仅做渲染逻辑处理；
-渲染逻辑禁止跨多个接口调用；
-前端关注交互、渲染逻辑，尽量避免业务逻辑处理的出现；
-请求响应传输数据格式：JSON，JSON数据尽量简单轻量，避免多级JSON的出现；
-</code></pre><h5 id="响应格式"><a href="#响应格式" class="headerlink" title="响应格式"></a>响应格式</h5><pre><code>响应基本格式及处理状态值的规范
-基本响应格式
-列表响应格式
-</code></pre><h5 id="特殊内容"><a href="#特殊内容" class="headerlink" title="特殊内容"></a>特殊内容</h5><pre><code>下拉框、复选框、单选框统一由后端逻辑判定选中返回给前端展示；
-关于Boolean类型，JSON数据传输中一律使用1/0来标示，1为是/True，0为否/False
-关于日期类型，JSON数据传输中一律使用字符串，具体日期格式因业务而定；
-</code></pre><h5 id="文档规范"><a href="#文档规范" class="headerlink" title="文档规范"></a>文档规范</h5><h5 id="组件管理"><a href="#组件管理" class="headerlink" title="组件管理"></a>组件管理</h5><h5 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h5><h2 id="三、自动化"><a href="#三、自动化" class="headerlink" title="三、自动化"></a>三、自动化</h2><blockquote>
-<p>前端工程化的很多脏活累活都应该交给自动化工具来完成。</p>
-</blockquote>
-<p>需要秉持的一个理念是:</p>
-<pre><code>任何简单机械的重复劳动都应该让机器去完成
-图标合并
-持续继承
-自动化构建
-自动化部署
-自动化测试
-</code></pre><p><img src="//tiven.cn/assets/img/img-web-02.jpg" alt="工程化"></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端工程化</tag>
-        <tag>规范</tag>
       </tags>
   </entry>
 </search>
