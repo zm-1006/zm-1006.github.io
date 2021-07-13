@@ -6,7 +6,7 @@
   <link href="https://tiven.cn/atom.xml" rel="self"/>
   
   <link href="https://tiven.cn/"/>
-  <updated>2021-07-07T06:32:46.488Z</updated>
+  <updated>2021-07-13T09:59:10.528Z</updated>
   <id>https://tiven.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git删除远程某个历史提交记录</title>
+    <link href="https://tiven.cn/%E5%BC%80%E5%8F%91%E8%80%85%E7%AC%94%E8%AE%B0/2021/Git%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E6%9F%90%E4%B8%AA%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/"/>
+    <id>https://tiven.cn/%E5%BC%80%E5%8F%91%E8%80%85%E7%AC%94%E8%AE%B0/2021/Git%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E6%9F%90%E4%B8%AA%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/</id>
+    <published>2021-07-13T07:02:06.000Z</published>
+    <updated>2021-07-13T09:59:10.528Z</updated>
+    
+    <content type="html"><![CDATA[<p>在开发中经常会遇到在本地测试的代码或者隐私信息，一不小心提交到了远程仓库，即便立即删除了再提交，但是上次的提交记录在远程依旧可以查看。 特别是像账号密码、key文件这种，很可能造成隐私泄露。</p><p><img src="//tiven.cn/assets/img/img-git-logo.jpg" alt="Git"></p><a id="more"></a><p>分两种情况：</p><h2 id="一、删除最后一次提交"><a href="#一、删除最后一次提交" class="headerlink" title="一、删除最后一次提交"></a>一、删除最后一次提交</h2><p>这种情况比较简单，主要操作分两步：</p><ul><li>第一步：回滚上一次提交</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure><ul><li>第二步：强制提交本地代码</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master -f</span><br></pre></td></tr></table></figure><p>由于本地<code>reset</code>之后本地库落后于远程几个版本，所以需要使用<code>-f</code>强制提交。</p><h2 id="二、删除指定commit提交（非最后一次提交）"><a href="#二、删除指定commit提交（非最后一次提交）" class="headerlink" title="二、删除指定commit提交（非最后一次提交）"></a>二、删除指定commit提交（非最后一次提交）</h2><p>图例：<br><img src="//tiven.cn/assets/img/img-git-commit-01.jpg" alt="Git"></p><p><em>假定：</em> 现在我们要删除<code>commit--2</code>这条提交记录</p><ol><li>第一步：查看提交日志，获取要删除记录<code>commit--2</code>的<code>前一次</code>提交<code>commit--1</code>的提交ID</li></ol><p><strong><em>特别提示：</em></strong> <code>rebase -i</code>的ID一定是删除记录的前一次的提交ID</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure><p>展示如下内容：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">b08ec3f HEAD@&#123;4&#125;: commit: commit--3</span><br><span class="line">39841d1 HEAD@&#123;5&#125;: commit: commit--2</span><br><span class="line">35f96e1 HEAD@&#123;6&#125;: commit: commit--1</span><br></pre></td></tr></table></figure><p>拿到对应的提交ID为<code>35f96e1</code></p><ol start="2"><li>第二步：<code>rebase</code>操作</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i 35f96e1</span><br></pre></td></tr></table></figure><ul><li>执行完这个命令后，就可以看到 <code>35f96e1</code> 后的所有 commit 记录。如下图</li><li>默认是使用 vim 编辑器打开了commit log list。然后我们就可以针对我们不需要的某些 log 进行删除。</li><li>把原本的 <code>pick</code> 单词修改为 <code>drop</code> 就表示该ID对应的 commit log 我们需要删除。</li><li>vim保存退出。</li></ul><p><img src="//tiven.cn/assets/img/img-git-commit-02.png" alt="Git"></p><ol start="3"><li>第三步：解决冲突，强制推送更新到远程</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .                   <span class="comment"># 冲突时使用</span></span><br><span class="line">git commit -m <span class="string">"new commit"</span>  <span class="comment"># 冲突时使用</span></span><br><span class="line">git rebase --<span class="built_in">continue</span>       <span class="comment"># 冲突时使用</span></span><br><span class="line">git push origin master -f</span><br></pre></td></tr></table></figure><p>再查看远程的提交记录，发现<code>commit--2</code>就没有了。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;在开发中经常会遇到在本地测试的代码或者隐私信息，一不小心提交到了远程仓库，即便立即删除了再提交，但是上次的提交记录在远程依旧可以查看。 特别是像账号密码、key文件这种，很可能造成隐私泄露。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;//tiven.cn/assets/img/img-git-logo.jpg&quot; alt=&quot;Git&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="开发者笔记" scheme="https://tiven.cn/categories/开发者笔记/"/>
+    
+    
+    <category term="Git" scheme="https://tiven.cn/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>前端工程化</title>
@@ -99,11 +121,11 @@
     
     
     
+    <category term="js" scheme="https://tiven.cn/tags/js/"/>
+    
     <category term="babel" scheme="https://tiven.cn/tags/babel/"/>
     
     <category term="ES6" scheme="https://tiven.cn/tags/ES6/"/>
-    
-    <category term="js" scheme="https://tiven.cn/tags/js/"/>
     
   </entry>
   
