@@ -1389,8 +1389,12 @@ pre .keyword,
 pre .javascript .function {
   color: #c9c;
 }
+#mobile-nav {
+  display: none;
+}
 @media screen and (max-width: 479px) {
   #mobile-nav {
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
